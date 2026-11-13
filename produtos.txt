@@ -1,4 +1,4 @@
-# Lista de produtos acompanhados. Um por linha.
+# Lista de produtos acompanhados, um por linha.
 #
 # Escreva o nome do produto (quanto mais específico, melhor)
 # ou cole o link da página do produto no zoom.com.br.
