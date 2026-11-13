@@ -168,6 +168,12 @@
    "preco": 5199.9,
    "loja": "Amazon",
    "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-13T16:19-03:00",
+   "preco": 5199.9,
+   "loja": "Amazon",
+   "n_lojas": 1
   }
  ],
  "lojas": {
