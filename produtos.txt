@@ -1,0 +1,11 @@
+# Lista de produtos acompanhados. Um por linha.
+#
+# Escreva o nome do produto (quanto mais específico, melhor)
+# ou cole o link da página do produto no zoom.com.br.
+# Para avisar quando chegar num preço, acrescente " | valor".
+#
+# Exemplos (troque pelos seus):
+
+iPhone 15 128GB | 3500
+PlayStation 5 Slim
+Air Fryer Mondial 4L

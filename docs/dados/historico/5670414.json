@@ -1,0 +1,181 @@
+{
+ "id": "5670414",
+ "dias": {
+  "2026-10-05": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-06": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-07": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-08": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-09": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-10": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-11": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-12": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-13": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-14": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-15": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-16": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-17": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-18": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-19": {
+   "preco": 314.89,
+   "loja": "Magazine Luiza"
+  },
+  "2026-10-20": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-10-21": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-10-22": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-10-23": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-10-24": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-10-25": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-10-26": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-10-27": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-10-28": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-10-29": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-10-30": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-10-31": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-01": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-02": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-03": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-04": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-05": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-06": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-07": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-08": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-09": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-10": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-11": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-12": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  },
+  "2026-11-13": {
+   "preco": 323.6,
+   "loja": "Webcontinental"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-13T16:17-03:00",
+   "preco": 323.6,
+   "loja": "Webcontinental",
+   "n_lojas": 3
+  }
+ ],
+ "lojas": {
+  "245": "Webcontinental",
+  "22902": "Magazine Luiza",
+  "22905": "Magazine Luiza"
+ },
+ "nome": "Fritadeira Elétrica Sem óleo Air Fryer Mondial Family NAF-03i-4L Capacidade do Cesto 4l cor Inox",
+ "url": "https://www.zoom.com.br/fritadeira/fritadeira-eletrica-sem-oleo-mondial-family-naf-03i-capacidade-total-4l-timer-com-desligamento-automatico",
+ "imagem": "https://image.zst.com.br/E04BC308BE9DB209213380A1AEDEB275_810_590.jpg"
+}
