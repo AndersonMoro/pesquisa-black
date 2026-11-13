@@ -180,6 +180,12 @@
    "preco": 323.6,
    "loja": "Webcontinental",
    "n_lojas": 3
+  },
+  {
+   "quando": "2026-11-13T16:46-03:00",
+   "preco": 323.6,
+   "loja": "Webcontinental",
+   "n_lojas": 3
   }
  ],
  "lojas": {
