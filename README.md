@@ -12,8 +12,12 @@ Acompanha preços e histórico de preços para não cair em desconto falso na Bl
 
 ## Mudar a lista de produtos
 
-Edite [`produtos.txt`](produtos.txt) (dá para fazer pelo celular, no lápis do GitHub).
-Um produto por linha: o nome ou o link da página do produto no Zoom. Para ter aviso de
+**Pelo painel (recomendado):** use o campo "Adicionar produto" e os botões "Mudar alvo" e
+"Remover" de cada cartão. Na primeira vez em cada aparelho, o painel pede uma chave de acesso
+do GitHub (fine-grained token, só para este repositório, com Contents: Read and write) e mostra
+o passo a passo. A chave fica guardada apenas no navegador.
+
+**Pelo arquivo:** edite [`produtos.txt`](produtos.txt). Um produto por linha: o nome ou o link da página do produto no Zoom. Para ter aviso de
 preço-alvo, acrescente ` | valor`:
 
 ```

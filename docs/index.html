@@ -54,6 +54,24 @@
   .target { color: var(--mute); }
   .target.hit { color: var(--good); font-weight: 600; }
   .err { border-color: var(--bad); font-size: .9rem; }
+  label { display: block; font-weight: 600; margin-bottom: 8px; }
+  input { width: 100%; min-width: 0; font: inherit; color: var(--ink); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+  input:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  button { font: inherit; font-weight: 600; border: 0; border-radius: 10px; padding: 10px 16px;
+    background: var(--accent); color: var(--card); cursor: pointer; white-space: nowrap; }
+  button.ghost { background: none; color: var(--accent); padding: 4px 6px; font-weight: 500; font-size: .875rem; }
+  button.danger { color: var(--bad); }
+  button:disabled { opacity: .5; }
+  .row { display: flex; gap: 8px; margin-top: 8px; }
+  .acts { display: flex; gap: 2px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+  .foot { align-items: center; }
+  .editalvo { display: none; }
+  .editalvo.on { display: flex; }
+  details { margin-top: 12px; font-size: .875rem; color: var(--mute); }
+  summary { cursor: pointer; }
+  details ol { padding-left: 20px; margin: 8px 0; }
+  .pend { color: var(--mute); }
   .note { color: var(--mute); font-size: .8125rem; margin-top: 24px; }
 </style>
 </head>
@@ -63,6 +81,32 @@
     <h1>Pesquisa Black</h1>
     <p id="quando">Carregando…</p>
   </header>
+  <section class="card">
+    <form id="novo">
+      <label for="n-nome">Adicionar produto</label>
+      <input id="n-nome" placeholder="Nome do produto ou link do Zoom" required autocomplete="off">
+      <div class="row">
+        <input id="n-alvo" inputmode="decimal" placeholder="Preço-alvo (opcional)" autocomplete="off">
+        <button>Adicionar</button>
+      </div>
+    </form>
+    <p id="msg" class="why" role="status"></p>
+    <details id="conexao">
+      <summary id="conexao-titulo">Conectar ao GitHub para editar por aqui</summary>
+      <p>Só precisa fazer uma vez em cada aparelho. A chave fica guardada apenas neste navegador.</p>
+      <ol>
+        <li>Abra <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">criar chave de acesso no GitHub</a>.</li>
+        <li>Em <b>Repository access</b>, escolha <b>Only select repositories</b> e marque <b>pesquisa-black</b>.</li>
+        <li>Em <b>Permissions → Repository permissions → Contents</b>, escolha <b>Read and write</b>.</li>
+        <li>Clique em <b>Generate token</b>, copie e cole abaixo.</li>
+      </ol>
+      <form id="f-token" class="row">
+        <input id="token" type="password" placeholder="github_pat_..." autocomplete="off">
+        <button>Salvar</button>
+      </form>
+      <button class="ghost danger" id="desconectar" type="button" hidden>Desconectar este aparelho</button>
+    </details>
+  </section>
   <div id="lista"></div>
   <p class="note">Preço = menor oferta do dia entre as lojas, segundo o Zoom. “Preço normal” é a
     mediana dos últimos 30 dias. Um desconto só é tratado como real quando fica abaixo disso;
@@ -135,16 +179,167 @@ function cartao(p) {
       <div>Normal (mediana)<b>${brl(a.mediana)}</b></div>
       <div>Máximo<b>${brl(a.maximo)}</b></div>
     </div>
-    <div class="foot">${alvo}<a href="${esc(p.url)}" target="_blank" rel="noopener">Ver no Zoom →</a></div>`;
+    <div class="foot">${alvo}<span class="acts">
+      <button class="ghost" data-a="alvo" type="button">Mudar alvo</button>
+      <button class="ghost danger" data-a="rm" type="button">Remover</button>
+      <a href="${esc(p.url)}" target="_blank" rel="noopener">Zoom →</a></span></div>
+    <form class="row editalvo">
+      <input inputmode="decimal" placeholder="Novo preço-alvo (vazio = sem alvo)" value="${p.alvo ?? ""}" aria-label="Novo preço-alvo">
+      <button>OK</button>
+    </form>`;
   ligarToque(el.querySelector(".chart"), p.serie);
+  ligarEdicao(el, p.entrada);
   return el;
 }
+
+// ---------- edição da lista (grava produtos.txt no repositório pela API do GitHub)
+
+const gh = location.hostname.match(/^(.+)\.github\.io$/);
+const REPO = gh ? `${gh[1]}/${location.pathname.split("/")[1]}` : "AndersonMoro/pesquisa-black";
+const API = `https://api.github.com/repos/${REPO}/contents/`;
+const chave = {
+  ler() { try { return localStorage.getItem("gh_token") || ""; } catch { return ""; } },
+  gravar(v) { try { v ? localStorage.setItem("gh_token", v) : localStorage.removeItem("gh_token"); } catch {} },
+};
+const $ = id => document.getElementById(id);
+const avisar = t => { $("msg").textContent = t; };
+const entradaDe = l => l.split("|")[0].trim();
+const ehProduto = l => l.trim() && !l.trim().startsWith("#");
+
+function lerValor(txt) {             // "R$ 3.500,00" -> 3500
+  let t = txt.replace(/[^\d,.]/g, "");
+  if (!t) return null;
+  if (t.includes(",")) t = t.replace(/\./g, "").replace(",", ".");
+  else if (/^\d{1,3}(\.\d{3})+$/.test(t)) t = t.replace(/\./g, "");
+  const n = Number(t);
+  return Number.isFinite(n) && n > 0 ? n : NaN;
+}
+const linha = (entrada, alvo) => alvo ? `${entrada} | ${alvo}` : entrada;
+
+async function alterar(mudar, ok) {
+  const t = chave.ler();
+  if (!t) {
+    $("conexao").open = true;
+    avisar("Para editar por aqui, conecte o GitHub uma vez (passos abaixo).");
+    $("conexao").scrollIntoView({ behavior: "smooth", block: "center" });
+    return false;
+  }
+  avisar("Salvando…");
+  try {
+    const h = { Authorization: "Bearer " + t, Accept: "application/vnd.github+json" };
+    const r = await fetch(API + "produtos.txt", { headers: h, cache: "no-store" });
+    if (r.status === 401) throw new Error("a chave é inválida ou venceu; refaça a conexão.");
+    if (!r.ok) throw new Error("o GitHub respondeu " + r.status + " ao ler a lista.");
+    const j = await r.json();
+    const texto = new TextDecoder().decode(Uint8Array.from(atob(j.content.replace(/\s/g, "")), c => c.charCodeAt(0)));
+    const novo = mudar(texto.split(/\r?\n/)).join("\n").replace(/\n*$/, "\n");
+    const b64 = btoa(Array.from(new TextEncoder().encode(novo), b => String.fromCharCode(b)).join(""));
+    const w = await fetch(API + "produtos.txt", { method: "PUT", headers: h,
+      body: JSON.stringify({ message: "Lista de produtos atualizada pelo painel", content: b64, sha: j.sha }) });
+    if (w.status === 403 || w.status === 404) throw new Error("a chave não tem permissão de escrita (Contents: Read and write) neste repositório.");
+    if (!w.ok) throw new Error("o GitHub respondeu " + w.status + " ao salvar.");
+    avisar(ok + " A coleta roda sozinha; os preços atualizam aqui em 1 a 2 minutos.");
+    aguardarColeta();
+    return true;
+  } catch (e) {
+    avisar("Não deu certo: " + (e.message || "sem conexão."));
+    return false;
+  }
+}
+
+function ligarEdicao(el, entrada) {
+  const form = el.querySelector(".editalvo");
+  el.querySelector('[data-a="alvo"]').onclick = () => { form.classList.toggle("on"); form.querySelector("input").focus(); };
+  form.onsubmit = async e => {
+    e.preventDefault();
+    const v = lerValor(form.querySelector("input").value);
+    if (Number.isNaN(v)) return avisar("Preço-alvo inválido. Use algo como 3500 ou 3.499,90.");
+    const feito = await alterar(ls => ls.map(l => ehProduto(l) && entradaDe(l) === entrada ? linha(entrada, v) : l),
+      v ? "Preço-alvo atualizado." : "Preço-alvo removido.");
+    if (feito) form.classList.remove("on");
+  };
+  const rm = el.querySelector('[data-a="rm"]');
+  rm.onclick = async () => {
+    if (!rm.dataset.certeza) { rm.dataset.certeza = 1; rm.textContent = "Confirmar remoção"; return; }
+    rm.disabled = true;
+    const feito = await alterar(ls => ls.filter(l => !(ehProduto(l) && entradaDe(l) === entrada)), "Produto removido da lista.");
+    if (feito) el.remove(); else { rm.disabled = false; delete rm.dataset.certeza; rm.textContent = "Remover"; }
+  };
+}
+
+$("novo").onsubmit = async e => {
+  e.preventDefault();
+  const nome = $("n-nome").value.replace(/\|/g, " ").trim();
+  const alvo = lerValor($("n-alvo").value);
+  if (!nome) return;
+  if (Number.isNaN(alvo)) return avisar("Preço-alvo inválido. Use algo como 3500 ou 3.499,90.");
+  let repetido = false;
+  const feito = await alterar(ls => {
+    repetido = ls.some(l => ehProduto(l) && entradaDe(l).toLowerCase() === nome.toLowerCase());
+    return repetido ? ls : [...ls, linha(nome, alvo)];
+  }, "Produto adicionado.");
+  if (!feito) return;
+  if (repetido) return avisar("Esse produto já está na lista.");
+  const el = document.createElement("section");
+  el.className = "card pend";
+  el.innerHTML = `<b>${esc(nome)}</b><br>Aguardando a primeira coleta…`;
+  $("lista").prepend(el);
+  $("novo").reset();
+};
+
+function mostrarConexao() {
+  const on = !!chave.ler();
+  $("conexao-titulo").textContent = on ? "Conectado ao GitHub neste aparelho" : "Conectar ao GitHub para editar por aqui";
+  $("desconectar").hidden = !on;
+}
+$("f-token").onsubmit = e => {
+  e.preventDefault();
+  const v = $("token").value.trim();
+  if (!v) return;
+  chave.gravar(v);
+  $("token").value = "";
+  $("conexao").open = false;
+  mostrarConexao();
+  avisar("Conectado. Agora dá para adicionar, mudar o alvo e remover produtos por aqui.");
+};
+$("desconectar").onclick = () => { chave.gravar(""); mostrarConexao(); avisar("Chave apagada deste aparelho."); };
+mostrarConexao();
 
 const estilo = document.createElement("style");
 estilo.textContent = ".dot{position:absolute;width:9px;height:9px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid var(--card);pointer-events:none}";
 document.head.append(estilo);
 
-fetch("dados/resumo.json?t=" + Date.now()).then(r => r.json()).then(d => {
+let ultimaColeta = null, espera = null;
+
+// com a chave, lê direto do repositório (sem esperar o site ser republicado)
+async function buscarResumo() {
+  const t = chave.ler();
+  if (t) {
+    try {
+      const r = await fetch(API + "docs/dados/resumo.json", { cache: "no-store",
+        headers: { Authorization: "Bearer " + t, Accept: "application/vnd.github.raw+json" } });
+      if (r.ok) return r.json();
+    } catch {}
+  }
+  return fetch("dados/resumo.json?t=" + Date.now()).then(r => r.json());
+}
+
+function aguardarColeta() {
+  clearInterval(espera);
+  const antes = ultimaColeta;
+  let n = 0;
+  espera = setInterval(async () => {
+    if (++n > 20) return clearInterval(espera);
+    try {
+      const d = await buscarResumo();
+      if (d.atualizado !== antes) { clearInterval(espera); mostrar(d); avisar("Preços atualizados."); }
+    } catch {}
+  }, 15000);
+}
+
+function mostrar(d) {
+  ultimaColeta = d.atualizado;
+  document.getElementById("lista").innerHTML = "";
   const q = new Date(d.atualizado);
   document.getElementById("quando").textContent =
     "Atualizado em " + q.toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) + " · Fonte: " + d.fonte;
@@ -157,8 +352,10 @@ fetch("dados/resumo.json?t=" + Date.now()).then(r => r.json()).then(d => {
     el.innerHTML = `<b>${esc(e.entrada)}</b><br>Sem leitura: ${esc(e.erro)}`;
     lista.append(el);
   });
-  if (!d.produtos.length && !d.erros.length) lista.innerHTML = '<p class="card">Nenhum produto na lista ainda. Edite o arquivo produtos.txt no repositório.</p>';
-}).catch(() => { document.getElementById("quando").textContent = "Ainda não há dados coletados."; });
+  if (!d.produtos.length && !d.erros.length) lista.innerHTML = '<p class="card">Nenhum produto na lista ainda. Adicione o primeiro no campo acima.</p>';
+}
+
+buscarResumo().then(mostrar).catch(() => { document.getElementById("quando").textContent = "Ainda não há dados coletados."; });
 </script>
 </body>
 </html>
