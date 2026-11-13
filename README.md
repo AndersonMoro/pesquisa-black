@@ -3,9 +3,17 @@
 Acompanha preços e histórico de preços para não cair em desconto falso na Black Friday.
 
 - **Painel (abre no celular):** https://andersonmoro.github.io/pesquisa-black/
-- **Fonte:** [Zoom](https://www.zoom.com.br), comparador de preços. Usa o menor preço do dia
-  entre as lojas e o histórico diário do próprio Zoom (cerca de 40 dias), e passa a acumular
-  o histórico aqui a cada coleta.
+- **Fontes:**
+  - [Zoom](https://www.zoom.com.br) e [Buscapé](https://www.buscape.com.br), comparadores de
+    preços: menor preço do dia entre as lojas (Amazon, Magalu, KaBuM, Americanas e outras) e
+    histórico diário de cerca de 40 dias, que passa a ser acumulado aqui a cada coleta.
+  - [KaBuM](https://www.kabum.com.br) e outras lojas, pelo link da página do produto. Vale para
+    lojas que publicam o preço na página e não bloqueiam leitura automática. O histórico começa
+    na primeira coleta.
+  - Mercado Livre, Amazon e Magazine Luiza bloqueiam leitura automática direta; os preços delas
+    entram pelo Zoom/Buscapé.
+- **Busca por nome:** procura no Zoom, depois no Buscapé, depois na KaBuM, e só aceita um
+  resultado que contenha todas as palavras digitadas.
 - **Rotina:** o GitHub Actions roda `coletor.py` a cada 2 horas e salva tudo em `docs/dados/`.
 - **Alertas:** Telegram. Um resumo por dia (primeira coleta depois das 8h) e aviso imediato
   quando o preço cai 3% ou mais, vira desconto real, atinge o preço-alvo ou é desconto maquiado.

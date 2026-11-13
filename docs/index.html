@@ -84,7 +84,7 @@
   <section class="card">
     <form id="novo">
       <label for="n-nome">Adicionar produto</label>
-      <input id="n-nome" placeholder="Nome do produto ou link do Zoom" required autocomplete="off">
+      <input id="n-nome" placeholder="Nome do produto ou link (Zoom, Buscapé, KaBuM…)" required autocomplete="off">
       <div class="row">
         <input id="n-alvo" inputmode="decimal" placeholder="Preço-alvo (opcional)" autocomplete="off">
         <button>Adicionar</button>
@@ -108,7 +108,9 @@
     </details>
   </section>
   <div id="lista"></div>
-  <p class="note">Preço = menor oferta do dia entre as lojas, segundo o Zoom. “Preço normal” é a
+  <p class="note">No Zoom e no Buscapé, o preço é a menor oferta do dia entre as lojas e o histórico
+    já vem com cerca de 40 dias. Em links de loja (KaBuM e outras), é o preço daquela loja e o
+    histórico começa na primeira coleta. “Preço normal” é a
     mediana dos últimos 30 dias. Um desconto só é tratado como real quando fica abaixo disso;
     se o preço subiu nos últimos dias e depois “baixou”, aparece como desconto maquiado.</p>
 </main>
@@ -157,7 +159,7 @@ function ligarToque(el, serie) {
 }
 
 function cartao(p) {
-  const a = p.analise;
+  const a = p.analise, fonte = p.fonte || "Zoom";
   // a série guarda o menor preço de cada dia; se agora está diferente, mostra o ponto atual
   const ult = p.serie[p.serie.length - 1];
   if (ult && ult[1] !== p.preco) p.serie.push([ult[0], p.preco]);
@@ -170,7 +172,7 @@ function cartao(p) {
       ${p.imagem ? `<img src="${esc(p.imagem)}" alt="" loading="lazy">` : ""}
       <h2>${esc(p.nome)}</h2>
     </div>
-    <div class="price"><b>${brl(p.preco)}</b><span>${esc(p.loja)} · ${p.n_lojas} loja(s)${dif}</span></div>
+    <div class="price"><b>${brl(p.preco)}</b><span>${esc(p.loja)}${p.n_lojas > 1 ? ` · ${p.n_lojas} lojas` : ""}${fonte !== p.loja ? ` · via ${esc(fonte)}` : ""}${dif}</span></div>
     <span class="badge ${a.veredito}">${esc(a.titulo)}</span>
     <p class="why">${esc(a.explicacao)}</p>
     <div class="chart">${grafico(p.serie, a.mediana)}</div>
@@ -182,7 +184,7 @@ function cartao(p) {
     <div class="foot">${alvo}<span class="acts">
       <button class="ghost" data-a="alvo" type="button">Mudar alvo</button>
       <button class="ghost danger" data-a="rm" type="button">Remover</button>
-      <a href="${esc(p.url)}" target="_blank" rel="noopener">Zoom →</a></span></div>
+      <a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(fonte)} →</a></span></div>
     <form class="row editalvo">
       <input inputmode="decimal" placeholder="Novo preço-alvo (vazio = sem alvo)" value="${p.alvo ?? ""}" aria-label="Novo preço-alvo">
       <button>OK</button>

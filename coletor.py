@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 """Coletor de preços para a Black Friday.
 
-Lê produtos.txt, consulta o Zoom (comparador de preços: menor preço do dia
-entre as lojas + histórico diário), guarda o histórico em docs/dados/ e
-manda alertas pelo Telegram.
+Lê produtos.txt e consulta:
+  - Zoom e Buscapé (comparadores: menor preço do dia entre as lojas + histórico diário);
+  - KaBuM e qualquer loja cuja página de produto publique o preço (schema.org),
+    pelo link do produto. Nesses casos o histórico começa na primeira coleta.
+Guarda o histórico em docs/dados/ e manda alertas pelo Telegram.
 
 Só usa a biblioteca padrão do Python.
 """
 from __future__ import annotations
 
 import gzip
+import hashlib
 import html
+import unicodedata
 import json
 import os
 import re
@@ -31,6 +35,8 @@ ARQ_ESTADO = DADOS / "estado.json"
 DIR_HIST = DADOS / "historico"
 
 ZOOM = "https://www.zoom.com.br"
+BUSCAPE = "https://www.buscape.com.br"
+KABUM = "https://www.kabum.com.br"
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/130.0 Safari/537.36")
 BRT = timezone(timedelta(hours=-3))
@@ -96,26 +102,175 @@ def ler_produtos() -> list[dict]:
     return itens
 
 
-def resolver_url(entrada: str, estado: dict) -> str | None:
-    """Link do Zoom é usado direto; nome vira busca (resultado fica em cache)."""
-    if entrada.startswith("http"):
-        u = urllib.parse.urlsplit(entrada)
-        return f"{ZOOM}{u.path}"
-    cache = estado.setdefault("buscas", {})
-    if entrada in cache:
-        return cache[entrada]
-    s = estado_da_pagina(f"{ZOOM}/search?q={urllib.parse.quote_plus(entrada)}")
+def palavras(txt: str) -> list[str]:
+    sem_acento = unicodedata.normalize("NFKD", txt).encode("ascii", "ignore").decode()
+    return re.findall(r"[a-z0-9]+", sem_acento.lower())
+
+
+def bate(entrada: str, nome: str) -> bool:
+    """Só aceita um resultado de busca que contenha todas as palavras pedidas."""
+    alvo = " ".join(palavras(nome))
+    return all(p in alvo for p in palavras(entrada))
+
+
+def buscar_comparador(base: str, entrada: str) -> tuple[str | None, str | None]:
+    s = estado_da_pagina(f"{base}/search?q={urllib.parse.quote_plus(entrada)}")
+    parecido = None
     for hit in s.get("hits", {}).get("hits", []):
         if hit.get("type") == "product" and hit.get("url"):
-            cache[entrada] = ZOOM + hit["url"]
-            print(f"  busca '{entrada}' -> {hit.get('name')}")
-            return cache[entrada]
-    return None
+            if bate(entrada, hit.get("name") or ""):
+                return base + hit["url"], hit.get("name")
+            parecido = parecido or hit.get("name")
+    return None, parecido
+
+
+def buscar_kabum(entrada: str) -> tuple[str | None, str | None]:
+    pagina = baixar(f"{KABUM}/busca/{'-'.join(palavras(entrada))}")
+    parecido = None
+    for prod in produtos_jsonld(pagina):
+        url = (prod.get("offers") or {}).get("url") if isinstance(prod.get("offers"), dict) else None
+        if url:
+            if bate(entrada, prod.get("name") or ""):
+                return url, prod.get("name")
+            parecido = parecido or prod.get("name")
+    return None, parecido
+
+
+def resolver_url(entrada: str, estado: dict) -> str:
+    """Link é usado direto; nome vira busca no Zoom, Buscapé e KaBuM (com cache)."""
+    if entrada.startswith("http"):
+        u = urllib.parse.urlsplit(entrada)
+        if nome_fonte(entrada) in ("Zoom", "Buscapé", "KaBuM"):
+            return f"https://{u.netloc}{u.path}"
+        return urllib.parse.urlunsplit((u.scheme, u.netloc, u.path, u.query, ""))
+    cache = estado.setdefault("buscas_v2", {})
+    if entrada in cache:
+        return cache[entrada]
+    parecidos, falhas = [], []
+    for fonte, buscar in (("Zoom", lambda: buscar_comparador(ZOOM, entrada)),
+                          ("Buscapé", lambda: buscar_comparador(BUSCAPE, entrada)),
+                          ("KaBuM", lambda: buscar_kabum(entrada))):
+        try:
+            url, nome = buscar()
+        except Exception as e:
+            print(f"  busca no {fonte} falhou: {e}")
+            falhas.append(fonte)
+            continue
+        if url:
+            cache[entrada] = url
+            print(f"  busca '{entrada}' -> {fonte}: {nome}")
+            return url
+        if nome:
+            parecidos.append(f"{fonte}: {nome}")
+    dica = f" O mais parecido foi “{parecidos[0]}”." if parecidos else ""
+    if falhas:
+        dica += f" (Sem resposta de: {', '.join(falhas)}.)"
+    raise RuntimeError("nenhum produto com esse nome exato no Zoom, Buscapé ou KaBuM." + dica
+                       + " Tente outro nome ou cole o link da página do produto.")
 
 
 # ---------------------------------------------------------------- coleta
 
+FONTES = {"zoom.com.br": "Zoom", "buscape.com.br": "Buscapé", "kabum.com.br": "KaBuM"}
+
+
+def nome_fonte(url: str) -> str:
+    host = urllib.parse.urlsplit(url).netloc.lower().removeprefix("www.")
+    for dominio, nome in FONTES.items():
+        if host == dominio or host.endswith("." + dominio):
+            return nome
+    return host
+
+
+def produtos_jsonld(pagina: str) -> list[dict]:
+    """Produtos descritos na página no padrão schema.org (usado pela maioria das lojas)."""
+    achados = []
+
+    def varrer(o):
+        if isinstance(o, list):
+            for x in o:
+                varrer(x)
+        elif isinstance(o, dict):
+            tipo = o.get("@type")
+            if tipo == "Product" or (isinstance(tipo, list) and "Product" in tipo):
+                achados.append(o)
+            for chave in ("@graph", "mainEntity", "itemListElement", "item"):
+                if chave in o:
+                    varrer(o[chave])
+
+    for m in re.finditer(r'<script[^>]*application/ld\+json[^>]*>(.*?)</script>', pagina, re.S):
+        try:
+            varrer(json.loads(m.group(1)))
+        except ValueError:
+            pass
+    return achados
+
+
+def numero(v) -> float | None:
+    if isinstance(v, (int, float)):
+        return float(v)
+    t = re.sub(r"[^\d,.]", "", str(v or ""))
+    if "," in t:
+        t = t.replace(".", "").replace(",", ".")
+    try:
+        return float(t)
+    except ValueError:
+        return None
+
+
+def preco_da_oferta(ofertas) -> tuple[float | None, bool]:
+    """Menor preço entre as ofertas do produto e se está disponível."""
+    lista = ofertas if isinstance(ofertas, list) else [ofertas]
+    precos, disponivel = [], False
+    for o in lista:
+        if not isinstance(o, dict):
+            continue
+        p = numero(o.get("price") or o.get("lowPrice"))
+        if p is None and o.get("offers"):
+            p, _ = preco_da_oferta(o["offers"])
+        if p:
+            precos.append(p)
+            if "OutOfStock" not in str(o.get("availability", "")):
+                disponivel = True
+    return (min(precos) if precos else None), disponivel
+
+
+def coletar_loja(url: str) -> dict:
+    """Lê o preço direto da página do produto numa loja (sem histórico anterior)."""
+    fonte = nome_fonte(url)
+    try:
+        pagina = baixar(url)
+    except RuntimeError as e:
+        raise RuntimeError(f"{fonte} não deixou ler a página (bloqueia leitura automática "
+                           f"ou o link está errado): {e}") from None
+    for prod in produtos_jsonld(pagina):
+        preco, disponivel = preco_da_oferta(prod.get("offers"))
+        if not preco:
+            continue
+        if not disponivel:
+            raise RuntimeError(f"produto indisponível no {fonte} agora")
+        img = prod.get("image")
+        if isinstance(img, list):
+            img = img[0] if img else None
+        if isinstance(img, dict):
+            img = img.get("url")
+        return {
+            "id": fonte.lower().replace(".", "-") + "-" + hashlib.md5(url.encode()).hexdigest()[:10],
+            "nome": html.unescape(str(prod.get("name") or url)),
+            "url": url, "imagem": img, "preco": round(preco, 2),
+            "loja": fonte, "fonte": fonte, "n_lojas": 1, "lojas": {}, "dias_zoom": {},
+        }
+    raise RuntimeError(f"não achei o preço na página do {fonte}; "
+                       "o site pode bloquear leitura automática")
+
+
 def coletar(url: str) -> dict:
+    if nome_fonte(url) in ("Zoom", "Buscapé"):
+        return coletar_comparador(url)
+    return coletar_loja(url)
+
+
+def coletar_comparador(url: str) -> dict:
     s = estado_da_pagina(url)
     ofertas = s.get("offers", {})
     pid = str(ofertas.get("currentProductID") or "")
@@ -153,6 +308,7 @@ def coletar(url: str) -> dict:
         "imagem": imagens[0].get("url") if imagens else None,
         "preco": round(float(menor["price"]), 2),
         "loja": menor.get("sellerName") or "",
+        "fonte": nome_fonte(url),
         "n_lojas": ofertas.get("countOfStores") or 0,
         "lojas": lojas,
         "dias_zoom": dias,
@@ -239,6 +395,11 @@ def analisar(h: dict, preco: float, hoje: str) -> dict:
     return r
 
 
+def txt(s) -> str:
+    """Escapa texto para o HTML do Telegram (sem mexer em aspas)."""
+    return html.escape(str(s), quote=False)
+
+
 def brl(v: float) -> str:
     return "R$ " + f"{v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
@@ -273,8 +434,8 @@ def telegram(texto: str) -> bool:
 def linha_produto(p: dict) -> str:
     a = p["analise"]
     dif = f" ({a['dif_mediana']:+.0f}% vs normal)" if a["dif_mediana"] is not None else ""
-    return (f"{ICONE[a['veredito']]} <a href=\"{p['url']}\">{html.escape(p['nome'])}</a>\n"
-            f"   <b>{brl(p['preco'])}</b> em {html.escape(p['loja'])}{dif}\n"
+    return (f"{ICONE[a['veredito']]} <a href=\"{p['url']}\">{txt(p['nome'])}</a>\n"
+            f"   <b>{brl(p['preco'])}</b> em {txt(p['loja'])}{dif}\n"
             f"   {a['titulo']}")
 
 
@@ -313,23 +474,21 @@ def main() -> int:
         print(f"- {item['entrada']}")
         try:
             url = resolver_url(item["entrada"], estado)
-            if not url:
-                raise RuntimeError("o Zoom não tem página de produto com histórico para esse nome; "
-                                   "seja mais específico ou cole o link do produto no zoom.com.br")
             c = coletar(url)
             h = atualizar_historico(c, agora)
             p = {"id": c["id"], "nome": c["nome"], "url": c["url"], "imagem": c["imagem"],
                  "entrada": item["entrada"], "alvo": item["alvo"],
-                 "preco": c["preco"], "loja": c["loja"], "n_lojas": c["n_lojas"],
+                 "preco": c["preco"], "loja": c["loja"], "fonte": c["fonte"],
+                 "n_lojas": c["n_lojas"],
                  "analise": analisar(h, c["preco"], hoje),
                  "serie": [[d, v["preco"]] for d, v in h["dias"].items()][-120:]}
             produtos.append(p)
             print(f"  {brl(p['preco'])} em {p['loja']} -> {p['analise']['titulo']}")
             ev = eventos_do_produto(p, memoria.setdefault(c["id"], {}))
             if ev:
-                alertas.append(f"<b><a href=\"{p['url']}\">{html.escape(p['nome'])}</a></b>\n"
-                               f"Agora: <b>{brl(p['preco'])}</b> em {html.escape(p['loja'])}\n"
-                               + "\n".join(html.escape(e) for e in ev))
+                alertas.append(f"<b><a href=\"{p['url']}\">{txt(p['nome'])}</a></b>\n"
+                               f"Agora: <b>{brl(p['preco'])}</b> em {txt(p['loja'])}\n"
+                               + "\n".join(txt(e) for e in ev))
         except Exception as e:  # um produto com problema não derruba os outros
             erros.append({"entrada": item["entrada"], "erro": str(e)})
             print(f"  ! {e}")
@@ -337,7 +496,8 @@ def main() -> int:
 
     ARQ_RESUMO.write_text(json.dumps({
         "atualizado": agora.isoformat(timespec="minutes"),
-        "fonte": "Zoom (zoom.com.br)", "produtos": produtos, "erros": erros,
+        "fonte": ", ".join(sorted({p["fonte"] for p in produtos})) or "Zoom",
+        "produtos": produtos, "erros": erros,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     painel = os.environ.get("PAINEL_URL", "")
@@ -350,14 +510,14 @@ def main() -> int:
         texto = (f"🛒 <b>Resumo do dia {agora.strftime('%d/%m')}</b>\n\n"
                  + "\n\n".join(linha_produto(p) for p in produtos))
         if erros:
-            texto += "\n\n⚠️ Sem leitura: " + ", ".join(html.escape(e["entrada"]) for e in erros)
+            texto += "\n\n⚠️ Sem leitura: " + ", ".join(txt(e["entrada"]) for e in erros)
         if telegram(texto + rodape):
             estado["resumo_enviado"] = hoje
 
     # falha repetida de tudo = fonte fora do ar ou bloqueando: avisa uma vez por dia
     if not produtos and erros and estado.get("falha_avisada") != hoje:
         if telegram("⚠️ <b>Coleta de preços falhou</b>\nNenhum produto pôde ser lido agora. "
-                    "Primeiro erro: " + html.escape(erros[0]["erro"])):
+                    "Primeiro erro: " + txt(erros[0]["erro"])):
             estado["falha_avisada"] = hoje
 
     ARQ_ESTADO.write_text(json.dumps(estado, ensure_ascii=False, indent=1), encoding="utf-8")
