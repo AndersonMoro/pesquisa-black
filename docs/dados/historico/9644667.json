@@ -1,0 +1,135 @@
+{
+ "id": "9644667",
+ "dias": {
+  "2026-10-16": {
+   "preco": 299.9,
+   "loja": "Amazon"
+  },
+  "2026-10-17": {
+   "preco": 299.9,
+   "loja": "Amazon"
+  },
+  "2026-10-18": {
+   "preco": 299.9,
+   "loja": "Amazon"
+  },
+  "2026-10-19": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-20": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-21": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-22": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-23": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-24": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-25": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-26": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-27": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-28": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-29": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-30": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-10-31": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-01": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-02": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-03": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-04": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-05": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-06": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-07": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-08": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-09": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-10": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-11": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-12": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  },
+  "2026-11-13": {
+   "preco": 319.9,
+   "loja": "Amazon"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-13T22:12-03:00",
+   "preco": 319.9,
+   "loja": "Amazon",
+   "n_lojas": 1
+  }
+ ],
+ "lojas": {
+  "1582": "Amazon"
+ },
+ "nome": "Zaad Eau De Parfum - 95ml",
+ "url": "https://www.zoom.com.br/perfume/zaad-eau-de-parfum-95ml",
+ "imagem": "https://image.zst.com.br/58012DF04FF625B9FADA209CCF3A9DCF_810_590.jpg"
+}
