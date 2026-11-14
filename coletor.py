@@ -140,6 +140,10 @@ def resolver_url(entrada: str, estado: dict) -> str:
     """Link é usado direto; nome vira busca no Zoom, Buscapé e KaBuM (com cache)."""
     if entrada.startswith("http"):
         u = urllib.parse.urlsplit(entrada)
+        if nome_fonte(entrada) in ("Zoom", "Buscapé") and u.path.startswith("/lead"):
+            raise RuntimeError("este link é de uma oferta avulsa, que leva direto à loja e não tem "
+                               "página de comparação nem histórico. Abra o link, copie o endereço "
+                               "da página da loja que aparecer e cole esse no lugar.")
         if nome_fonte(entrada) in ("Zoom", "Buscapé", "KaBuM"):
             return f"https://{u.netloc}{u.path}"
         return urllib.parse.urlunsplit((u.scheme, u.netloc, u.path, u.query, ""))
