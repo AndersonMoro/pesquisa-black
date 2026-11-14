@@ -14,7 +14,7 @@ Acompanha preços e histórico de preços para não cair em desconto falso na Bl
     entram pelo Zoom/Buscapé.
 - **Busca por nome:** procura no Zoom, depois no Buscapé, depois na KaBuM. Se nenhum resultado
   tiver todas as palavras digitadas, fica com o mais parecido e o painel avisa no cartão.
-- **Rotina:** o GitHub Actions roda `coletor.py` a cada hora (o GitHub pode atrasar ou pular execuções) e salva tudo em `docs/dados/`.
+- **Rotina:** o GitHub Actions tenta rodar `coletor.py` a cada 20 minutos (o GitHub atrasa e pula muitas execuções) e salva tudo em `docs/dados/`.
 - **Alertas:** Telegram. Um resumo por dia (primeira coleta depois das 8h) e aviso imediato
   quando o preço cai 3% ou mais, vira desconto real, atinge o preço-alvo ou é desconto maquiado.
 
