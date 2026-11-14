@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-13T22:04-03:00",
+ "atualizado": "2026-11-13T22:05-03:00",
  "fonte": "Zoom",
  "produtos": [
   {
@@ -448,5 +448,10 @@
    ]
   }
  ],
- "erros": []
+ "erros": [
+  {
+   "entrada": "https://www.zoom.com.br/lead?oid=1542997941&channel=86&index=2&experiencevariant=cro-12-2&searchterm=Prato%20raso%20com%20decora%C3%A7%C3%A3o%20azul",
+   "erro": "falha ao baixar https://www.zoom.com.br/lead: HTTP Error 502: Bad Gateway"
+  }
+ ]
 }
