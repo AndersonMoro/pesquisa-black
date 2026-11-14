@@ -1,0 +1,179 @@
+{
+ "id": "11503475",
+ "dias": {
+  "2026-10-05": {
+   "preco": 26.22,
+   "loja": "Amazon"
+  },
+  "2026-10-06": {
+   "preco": 26.22,
+   "loja": "Amazon"
+  },
+  "2026-10-07": {
+   "preco": 26.22,
+   "loja": "Amazon"
+  },
+  "2026-10-08": {
+   "preco": 26.22,
+   "loja": "Amazon"
+  },
+  "2026-10-09": {
+   "preco": 26.22,
+   "loja": "Amazon"
+  },
+  "2026-10-10": {
+   "preco": 26.22,
+   "loja": "Amazon"
+  },
+  "2026-10-11": {
+   "preco": 26.22,
+   "loja": "Amazon"
+  },
+  "2026-10-12": {
+   "preco": 26.22,
+   "loja": "Amazon"
+  },
+  "2026-10-13": {
+   "preco": 38.31,
+   "loja": "Amazon"
+  },
+  "2026-10-14": {
+   "preco": 38.31,
+   "loja": "Amazon"
+  },
+  "2026-10-15": {
+   "preco": 38.31,
+   "loja": "Amazon"
+  },
+  "2026-10-16": {
+   "preco": 38.31,
+   "loja": "Amazon"
+  },
+  "2026-10-17": {
+   "preco": 38.12,
+   "loja": "Amazon"
+  },
+  "2026-10-18": {
+   "preco": 38.12,
+   "loja": "Amazon"
+  },
+  "2026-10-19": {
+   "preco": 38.12,
+   "loja": "Amazon"
+  },
+  "2026-10-20": {
+   "preco": 38.12,
+   "loja": "Amazon"
+  },
+  "2026-10-21": {
+   "preco": 38.12,
+   "loja": "Amazon"
+  },
+  "2026-10-22": {
+   "preco": 38.12,
+   "loja": "Amazon"
+  },
+  "2026-10-23": {
+   "preco": 38.31,
+   "loja": "Amazon"
+  },
+  "2026-10-24": {
+   "preco": 38.31,
+   "loja": "Amazon"
+  },
+  "2026-10-25": {
+   "preco": 38.31,
+   "loja": "Amazon"
+  },
+  "2026-10-26": {
+   "preco": 38.31,
+   "loja": "Amazon"
+  },
+  "2026-10-27": {
+   "preco": 38.31,
+   "loja": "Amazon"
+  },
+  "2026-10-28": {
+   "preco": 38.66,
+   "loja": "Amazon"
+  },
+  "2026-10-29": {
+   "preco": 38.66,
+   "loja": "Amazon"
+  },
+  "2026-10-30": {
+   "preco": 38.66,
+   "loja": "Amazon"
+  },
+  "2026-10-31": {
+   "preco": 38.66,
+   "loja": "Amazon"
+  },
+  "2026-11-01": {
+   "preco": 38.66,
+   "loja": "Amazon"
+  },
+  "2026-11-02": {
+   "preco": 38.69,
+   "loja": "Amazon"
+  },
+  "2026-11-03": {
+   "preco": 23.6,
+   "loja": "Amazon"
+  },
+  "2026-11-04": {
+   "preco": 23.6,
+   "loja": "Amazon"
+  },
+  "2026-11-05": {
+   "preco": 38.31,
+   "loja": "Amazon"
+  },
+  "2026-11-06": {
+   "preco": 26.22,
+   "loja": "Amazon"
+  },
+  "2026-11-07": {
+   "preco": 23.6,
+   "loja": "Amazon"
+  },
+  "2026-11-08": {
+   "preco": 23.6,
+   "loja": "Amazon"
+  },
+  "2026-11-09": {
+   "preco": 23.6,
+   "loja": "Amazon"
+  },
+  "2026-11-10": {
+   "preco": 23.6,
+   "loja": "Amazon"
+  },
+  "2026-11-11": {
+   "preco": 23.6,
+   "loja": "Amazon"
+  },
+  "2026-11-12": {
+   "preco": 23.6,
+   "loja": "Amazon"
+  },
+  "2026-11-13": {
+   "preco": 23.6,
+   "loja": "Amazon"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-13T22:03-03:00",
+   "preco": 23.6,
+   "loja": "Amazon",
+   "n_lojas": 1
+  }
+ ],
+ "lojas": {
+  "1582": "Amazon"
+ },
+ "nome": "Jogo de 6 Pratos Rasos Tassel 26cm - Germer",
+ "url": "https://www.zoom.com.br/pratos-especiais-avulsos/jogo-de-6-pratos-rasos-tassel-26cm-germer",
+ "imagem": "https://image.zst.com.br/0C9C47BDCB4014E74F9D2FA3458ED1EF_810_590.jpg"
+}

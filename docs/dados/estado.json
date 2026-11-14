@@ -27,6 +27,10 @@
   "10952099": {
    "preco": 39.47,
    "veredito": "normal"
+  },
+  "11503475": {
+   "preco": 23.6,
+   "veredito": "otimo"
   }
  },
  "buscas": {
@@ -43,6 +47,7 @@
   "armaf club de nuit urban man elixir": "https://www.zoom.com.br/perfume/armaf-club-de-nuit-urban-man-elixir-eau-de-parfum-perfume-masculino",
   "Nardo Oud Extrait de Parfum": "https://www.zoom.com.br/perfume/perfume-unisex-al-haramain-amber-oud-exclusif-bleu-extrait-de-parfum-60-ml",
   "maison alhambra victorioso": "https://www.zoom.com.br/perfume/perfume-maison-alhambra-infini-oud-edp-100ml",
-  "Jogo pratos azul": "https://www.zoom.com.br/pratos-especiais-avulsos/jogo-de-pratos-fundos-duralex-6-pecas"
+  "Jogo pratos azul": "https://www.zoom.com.br/pratos-especiais-avulsos/jogo-de-pratos-fundos-duralex-6-pecas",
+  "Jogo pratos rasos": "https://www.zoom.com.br/pratos-especiais-avulsos/jogo-de-6-pratos-rasos-tassel-26cm-germer"
  }
 }
