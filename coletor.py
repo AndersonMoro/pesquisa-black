@@ -107,33 +107,33 @@ def palavras(txt: str) -> list[str]:
     return re.findall(r"[a-z0-9]+", sem_acento.lower())
 
 
-def bate(entrada: str, nome: str) -> bool:
-    """Só aceita um resultado de busca que contenha todas as palavras pedidas."""
+def semelhanca(entrada: str, nome: str) -> float:
+    """Fração das palavras pedidas que aparecem no nome do resultado (1.0 = todas)."""
+    pedidas = palavras(entrada)
     alvo = " ".join(palavras(nome))
-    return all(p in alvo for p in palavras(entrada))
+    return sum(p in alvo for p in pedidas) / len(pedidas) if pedidas else 0.0
 
 
-def buscar_comparador(base: str, entrada: str) -> tuple[str | None, str | None]:
+def bate(entrada: str, nome: str) -> bool:
+    return semelhanca(entrada, nome) == 1.0
+
+
+def buscar_comparador(base: str, entrada: str) -> list[tuple[str, str]]:
+    """Resultados da busca, na ordem do site: (link, nome)."""
     s = estado_da_pagina(f"{base}/search?q={urllib.parse.quote_plus(entrada)}")
-    parecido = None
-    for hit in s.get("hits", {}).get("hits", []):
-        if hit.get("type") == "product" and hit.get("url"):
-            if bate(entrada, hit.get("name") or ""):
-                return base + hit["url"], hit.get("name")
-            parecido = parecido or hit.get("name")
-    return None, parecido
+    return [(base + hit["url"], hit.get("name") or "")
+            for hit in s.get("hits", {}).get("hits", [])
+            if hit.get("type") == "product" and hit.get("url")]
 
 
-def buscar_kabum(entrada: str) -> tuple[str | None, str | None]:
+def buscar_kabum(entrada: str) -> list[tuple[str, str]]:
     pagina = baixar(f"{KABUM}/busca/{'-'.join(palavras(entrada))}")
-    parecido = None
+    achados = []
     for prod in produtos_jsonld(pagina):
         url = (prod.get("offers") or {}).get("url") if isinstance(prod.get("offers"), dict) else None
         if url:
-            if bate(entrada, prod.get("name") or ""):
-                return url, prod.get("name")
-            parecido = parecido or prod.get("name")
-    return None, parecido
+            achados.append((url, prod.get("name") or ""))
+    return achados
 
 
 def resolver_url(entrada: str, estado: dict) -> str:
@@ -146,26 +146,30 @@ def resolver_url(entrada: str, estado: dict) -> str:
     cache = estado.setdefault("buscas_v2", {})
     if entrada in cache:
         return cache[entrada]
-    parecidos, falhas = [], []
+    melhor, falhas = None, []          # melhor = (semelhança, link, nome, fonte)
     for fonte, buscar in (("Zoom", lambda: buscar_comparador(ZOOM, entrada)),
                           ("Buscapé", lambda: buscar_comparador(BUSCAPE, entrada)),
                           ("KaBuM", lambda: buscar_kabum(entrada))):
         try:
-            url, nome = buscar()
+            achados = buscar()
         except Exception as e:
             print(f"  busca no {fonte} falhou: {e}")
             falhas.append(fonte)
             continue
-        if url:
-            cache[entrada] = url
-            print(f"  busca '{entrada}' -> {fonte}: {nome}")
-            return url
-        if nome:
-            parecidos.append(f"{fonte}: {nome}")
-    dica = f" O mais parecido foi “{parecidos[0]}”." if parecidos else ""
-    if falhas:
-        dica += f" (Sem resposta de: {', '.join(falhas)}.)"
-    raise RuntimeError("nenhum produto com esse nome exato no Zoom, Buscapé ou KaBuM." + dica
+        for url, nome in achados:
+            nota = semelhanca(entrada, nome)
+            if melhor is None or nota > melhor[0]:   # empate: fica o primeiro (mais relevante)
+                melhor = (nota, url, nome, fonte)
+        if melhor and melhor[0] == 1.0:              # nome exato: não precisa olhar as outras fontes
+            break
+    if melhor and melhor[0] > 0:
+        nota, url, nome, fonte = melhor
+        cache[entrada] = url
+        tipo = "" if nota == 1.0 else f" (mais parecido, {nota:.0%} das palavras)"
+        print(f"  busca '{entrada}' -> {fonte}{tipo}: {nome}")
+        return url
+    dica = f" (Sem resposta de: {', '.join(falhas)}.)" if falhas else ""
+    raise RuntimeError("nada parecido com esse nome no Zoom, Buscapé ou KaBuM." + dica
                        + " Tente outro nome ou cole o link da página do produto.")
 
 
@@ -480,6 +484,9 @@ def main() -> int:
                  "entrada": item["entrada"], "alvo": item["alvo"],
                  "preco": c["preco"], "loja": c["loja"], "fonte": c["fonte"],
                  "n_lojas": c["n_lojas"],
+                 # busca por nome que não achou o nome exato: o painel avisa
+                 "aproximado": not item["entrada"].startswith("http")
+                               and not bate(item["entrada"], c["nome"]),
                  "analise": analisar(h, c["preco"], hoje),
                  "serie": [[d, v["preco"]] for d, v in h["dias"].items()][-120:]}
             produtos.append(p)
@@ -492,7 +499,7 @@ def main() -> int:
         except Exception as e:  # um produto com problema não derruba os outros
             erros.append({"entrada": item["entrada"], "erro": str(e)})
             print(f"  ! {e}")
-        time.sleep(2)
+        time.sleep(0.5)
 
     ARQ_RESUMO.write_text(json.dumps({
         "atualizado": agora.isoformat(timespec="minutes"),
