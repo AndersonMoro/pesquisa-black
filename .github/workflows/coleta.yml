@@ -20,6 +20,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}   # sempre a versão mais nova da lista, não a do disparo
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -37,5 +39,10 @@ jobs:
           git add docs/dados
           git diff --cached --quiet && exit 0
           git commit -m "Coleta de preços $(TZ=America/Sao_Paulo date '+%d/%m %H:%M')"
-          git pull --rebase
-          git push
+          # se o repositório mudou durante a coleta, reaplica por cima (vale o dado mais novo)
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          exit 1
