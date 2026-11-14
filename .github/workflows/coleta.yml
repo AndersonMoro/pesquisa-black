@@ -2,7 +2,7 @@ name: Coleta de preços
 
 on:
   schedule:
-    - cron: "17 */2 * * *"   # a cada 2 horas
+    - cron: "17 * * * *"     # a cada hora (o GitHub atrasa e pula execuções; assim sobra margem)
   workflow_dispatch:           # botão "Run workflow" para rodar na hora
   push:
     paths: [produtos.txt]      # roda ao editar a lista de produtos
