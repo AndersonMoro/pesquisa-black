@@ -1,0 +1,63 @@
+{
+ "id": "13334090",
+ "dias": {
+  "2026-11-03": {
+   "preco": 379.0,
+   "loja": "Americanas"
+  },
+  "2026-11-04": {
+   "preco": 379.0,
+   "loja": "Americanas"
+  },
+  "2026-11-05": {
+   "preco": 379.0,
+   "loja": "Americanas"
+  },
+  "2026-11-06": {
+   "preco": 379.0,
+   "loja": "Americanas"
+  },
+  "2026-11-07": {
+   "preco": 379.0,
+   "loja": "Americanas"
+  },
+  "2026-11-08": {
+   "preco": 379.0,
+   "loja": "Americanas"
+  },
+  "2026-11-09": {
+   "preco": 379.0,
+   "loja": "Americanas"
+  },
+  "2026-11-10": {
+   "preco": 379.0,
+   "loja": "Americanas"
+  },
+  "2026-11-11": {
+   "preco": 379.0,
+   "loja": "Americanas"
+  },
+  "2026-11-12": {
+   "preco": 379.0,
+   "loja": "Americanas"
+  },
+  "2026-11-13": {
+   "preco": 379.0,
+   "loja": "Americanas"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-13T21:59-03:00",
+   "preco": 379.0,
+   "loja": "Americanas",
+   "n_lojas": 1
+  }
+ ],
+ "lojas": {
+  "23254": "Americanas"
+ },
+ "nome": "Perfume Maison Alhambra Infini Oud Edp 100mL",
+ "url": "https://www.zoom.com.br/perfume/perfume-maison-alhambra-infini-oud-edp-100ml",
+ "imagem": "https://i.zst.com.br/thumbs/12/10/3c/-1378596734.jpg"
+}

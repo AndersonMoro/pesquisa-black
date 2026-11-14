@@ -1,7 +1,194 @@
 {
- "atualizado": "2026-11-13T21:56-03:00",
+ "atualizado": "2026-11-13T21:59-03:00",
  "fonte": "Zoom",
  "produtos": [
+  {
+   "id": "13660715",
+   "nome": "Perfume Unisex Al Haramain Amber Oud Exclusif Bleu Extrait De Parfum 60 Ml",
+   "url": "https://www.zoom.com.br/perfume/perfume-unisex-al-haramain-amber-oud-exclusif-bleu-extrait-de-parfum-60-ml",
+   "imagem": "https://i.zst.com.br/thumbs/12/28/16/-1449417501.jpg",
+   "entrada": "Nardo Oud Extrait de Parfum",
+   "alvo": null,
+   "preco": 909.14,
+   "loja": "Webcontinental",
+   "fonte": "Zoom",
+   "n_lojas": 2,
+   "aproximado": true,
+   "analise": {
+    "dias_historico": 39,
+    "mediana": 909.14,
+    "minimo": 852.33,
+    "maximo": 945.43,
+    "minimo_data": "2026-10-28",
+    "dif_mediana": 0.0,
+    "pico_recente": 909.14,
+    "veredito": "normal",
+    "titulo": "Preço normal",
+    "explicacao": "Perto do preço normal dos últimos 30 dias (R$ 909,14). O mínimo já visto foi R$ 852,33."
+   },
+   "serie": [
+    [
+     "2026-10-05",
+     945.43
+    ],
+    [
+     "2026-10-06",
+     945.43
+    ],
+    [
+     "2026-10-07",
+     945.43
+    ],
+    [
+     "2026-10-08",
+     945.43
+    ],
+    [
+     "2026-10-09",
+     945.43
+    ],
+    [
+     "2026-10-10",
+     945.43
+    ],
+    [
+     "2026-10-11",
+     945.43
+    ],
+    [
+     "2026-10-12",
+     945.43
+    ],
+    [
+     "2026-10-13",
+     945.43
+    ],
+    [
+     "2026-10-14",
+     945.43
+    ],
+    [
+     "2026-10-15",
+     945.43
+    ],
+    [
+     "2026-10-16",
+     945.43
+    ],
+    [
+     "2026-10-17",
+     945.43
+    ],
+    [
+     "2026-10-18",
+     945.43
+    ],
+    [
+     "2026-10-19",
+     945.43
+    ],
+    [
+     "2026-10-20",
+     945.43
+    ],
+    [
+     "2026-10-21",
+     945.43
+    ],
+    [
+     "2026-10-22",
+     945.43
+    ],
+    [
+     "2026-10-23",
+     945.43
+    ],
+    [
+     "2026-10-24",
+     945.43
+    ],
+    [
+     "2026-10-25",
+     945.43
+    ],
+    [
+     "2026-10-26",
+     945.43
+    ],
+    [
+     "2026-10-27",
+     945.43
+    ],
+    [
+     "2026-10-28",
+     852.33
+    ],
+    [
+     "2026-10-29",
+     852.33
+    ],
+    [
+     "2026-10-30",
+     852.33
+    ],
+    [
+     "2026-10-31",
+     852.33
+    ],
+    [
+     "2026-11-01",
+     852.33
+    ],
+    [
+     "2026-11-02",
+     852.33
+    ],
+    [
+     "2026-11-03",
+     852.33
+    ],
+    [
+     "2026-11-04",
+     909.14
+    ],
+    [
+     "2026-11-05",
+     909.14
+    ],
+    [
+     "2026-11-06",
+     909.14
+    ],
+    [
+     "2026-11-07",
+     909.14
+    ],
+    [
+     "2026-11-08",
+     909.14
+    ],
+    [
+     "2026-11-09",
+     909.14
+    ],
+    [
+     "2026-11-10",
+     909.14
+    ],
+    [
+     "2026-11-11",
+     909.14
+    ],
+    [
+     "2026-11-12",
+     909.14
+    ],
+    [
+     "2026-11-13",
+     909.14
+    ]
+   ]
+  },
   {
    "id": "13733949",
    "nome": "Armaf Club De Nuit Urban Man Elixir Eau De Parfum - Perfume Masculino",
@@ -13,6 +200,7 @@
    "loja": "Magazine Luiza",
    "fonte": "Zoom",
    "n_lojas": 1,
+   "aproximado": false,
    "analise": {
     "dias_historico": 39,
     "mediana": 360.99,
@@ -187,20 +375,265 @@
      360.99
     ]
    ]
+  },
+  {
+   "id": "13334090",
+   "nome": "Perfume Maison Alhambra Infini Oud Edp 100mL",
+   "url": "https://www.zoom.com.br/perfume/perfume-maison-alhambra-infini-oud-edp-100ml",
+   "imagem": "https://i.zst.com.br/thumbs/12/10/3c/-1378596734.jpg",
+   "entrada": "maison alhambra victorioso",
+   "alvo": null,
+   "preco": 379.0,
+   "loja": "Americanas",
+   "fonte": "Zoom",
+   "n_lojas": 1,
+   "aproximado": true,
+   "analise": {
+    "dias_historico": 10,
+    "mediana": 379.0,
+    "minimo": 379.0,
+    "maximo": 379.0,
+    "minimo_data": "2026-11-03",
+    "dif_mediana": 0.0,
+    "pico_recente": null,
+    "veredito": "normal",
+    "titulo": "Preço normal",
+    "explicacao": "Perto do preço normal dos últimos 30 dias (R$ 379,00). O mínimo já visto foi R$ 379,00."
+   },
+   "serie": [
+    [
+     "2026-11-03",
+     379.0
+    ],
+    [
+     "2026-11-04",
+     379.0
+    ],
+    [
+     "2026-11-05",
+     379.0
+    ],
+    [
+     "2026-11-06",
+     379.0
+    ],
+    [
+     "2026-11-07",
+     379.0
+    ],
+    [
+     "2026-11-08",
+     379.0
+    ],
+    [
+     "2026-11-09",
+     379.0
+    ],
+    [
+     "2026-11-10",
+     379.0
+    ],
+    [
+     "2026-11-11",
+     379.0
+    ],
+    [
+     "2026-11-12",
+     379.0
+    ],
+    [
+     "2026-11-13",
+     379.0
+    ]
+   ]
+  },
+  {
+   "id": "10952099",
+   "nome": "Jogo de Pratos Fundos Duralex 6 Peças",
+   "url": "https://www.zoom.com.br/pratos-especiais-avulsos/jogo-de-pratos-fundos-duralex-6-pecas",
+   "imagem": "https://image.zst.com.br/15E4A8CF6607676969E65B98D794AC86_810_590.jpg",
+   "entrada": "Jogo pratos azul",
+   "alvo": null,
+   "preco": 39.47,
+   "loja": "Webcontinental",
+   "fonte": "Zoom",
+   "n_lojas": 2,
+   "aproximado": true,
+   "analise": {
+    "dias_historico": 39,
+    "mediana": 39.47,
+    "minimo": 39.47,
+    "maximo": 39.47,
+    "minimo_data": "2026-10-05",
+    "dif_mediana": 0.0,
+    "pico_recente": 39.47,
+    "veredito": "normal",
+    "titulo": "Preço normal",
+    "explicacao": "Perto do preço normal dos últimos 30 dias (R$ 39,47). O mínimo já visto foi R$ 39,47."
+   },
+   "serie": [
+    [
+     "2026-10-05",
+     39.47
+    ],
+    [
+     "2026-10-06",
+     39.47
+    ],
+    [
+     "2026-10-07",
+     39.47
+    ],
+    [
+     "2026-10-08",
+     39.47
+    ],
+    [
+     "2026-10-09",
+     39.47
+    ],
+    [
+     "2026-10-10",
+     39.47
+    ],
+    [
+     "2026-10-11",
+     39.47
+    ],
+    [
+     "2026-10-12",
+     39.47
+    ],
+    [
+     "2026-10-13",
+     39.47
+    ],
+    [
+     "2026-10-14",
+     39.47
+    ],
+    [
+     "2026-10-15",
+     39.47
+    ],
+    [
+     "2026-10-16",
+     39.47
+    ],
+    [
+     "2026-10-17",
+     39.47
+    ],
+    [
+     "2026-10-18",
+     39.47
+    ],
+    [
+     "2026-10-19",
+     39.47
+    ],
+    [
+     "2026-10-20",
+     39.47
+    ],
+    [
+     "2026-10-21",
+     39.47
+    ],
+    [
+     "2026-10-22",
+     39.47
+    ],
+    [
+     "2026-10-23",
+     39.47
+    ],
+    [
+     "2026-10-24",
+     39.47
+    ],
+    [
+     "2026-10-25",
+     39.47
+    ],
+    [
+     "2026-10-26",
+     39.47
+    ],
+    [
+     "2026-10-27",
+     39.47
+    ],
+    [
+     "2026-10-28",
+     39.47
+    ],
+    [
+     "2026-10-29",
+     39.47
+    ],
+    [
+     "2026-10-30",
+     39.47
+    ],
+    [
+     "2026-10-31",
+     39.47
+    ],
+    [
+     "2026-11-01",
+     39.47
+    ],
+    [
+     "2026-11-02",
+     39.47
+    ],
+    [
+     "2026-11-03",
+     39.47
+    ],
+    [
+     "2026-11-04",
+     39.47
+    ],
+    [
+     "2026-11-05",
+     39.47
+    ],
+    [
+     "2026-11-06",
+     39.47
+    ],
+    [
+     "2026-11-07",
+     39.47
+    ],
+    [
+     "2026-11-08",
+     39.47
+    ],
+    [
+     "2026-11-09",
+     39.47
+    ],
+    [
+     "2026-11-10",
+     39.47
+    ],
+    [
+     "2026-11-11",
+     39.47
+    ],
+    [
+     "2026-11-12",
+     39.47
+    ],
+    [
+     "2026-11-13",
+     39.47
+    ]
+   ]
   }
  ],
- "erros": [
-  {
-   "entrada": "Nardo Oud Extrait de Parfum",
-   "erro": "nenhum produto com esse nome exato no Zoom, Buscapé ou KaBuM. O mais parecido foi “Zoom: Perfume Unisex Al Haramain Amber Oud Exclusif Bleu Extrait De Parfum 60 Ml”. Tente outro nome ou cole o link da página do produto."
-  },
-  {
-   "entrada": "maison alhambra victorioso",
-   "erro": "nenhum produto com esse nome exato no Zoom, Buscapé ou KaBuM. O mais parecido foi “Zoom: Perfume Maison Alhambra Infini Oud Edp 100mL”. Tente outro nome ou cole o link da página do produto."
-  },
-  {
-   "entrada": "Jogo pratos azul",
-   "erro": "nenhum produto com esse nome exato no Zoom, Buscapé ou KaBuM. O mais parecido foi “Zoom: Jogo de Pratos Fundos Duralex 6 Peças”. Tente outro nome ou cole o link da página do produto."
-  }
- ]
+ "erros": []
 }
