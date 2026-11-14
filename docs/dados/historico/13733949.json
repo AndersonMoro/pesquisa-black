@@ -160,6 +160,10 @@
   "2026-11-13": {
    "preco": 360.99,
    "loja": "Magazine Luiza"
+  },
+  "2026-11-14": {
+   "preco": 360.99,
+   "loja": "Magazine Luiza"
   }
  },
  "coletas": [
@@ -237,6 +241,12 @@
   },
   {
    "quando": "2026-11-13T22:16-03:00",
+   "preco": 360.99,
+   "loja": "Magazine Luiza",
+   "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-14T06:00-03:00",
    "preco": 360.99,
    "loja": "Magazine Luiza",
    "n_lojas": 1

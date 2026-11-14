@@ -160,6 +160,10 @@
   "2026-11-13": {
    "preco": 909.14,
    "loja": "Webcontinental"
+  },
+  "2026-11-14": {
+   "preco": 909.14,
+   "loja": "Webcontinental"
   }
  },
  "coletas": [
@@ -219,6 +223,12 @@
   },
   {
    "quando": "2026-11-13T22:16-03:00",
+   "preco": 909.14,
+   "loja": "Webcontinental",
+   "n_lojas": 2
+  },
+  {
+   "quando": "2026-11-14T06:00-03:00",
    "preco": 909.14,
    "loja": "Webcontinental",
    "n_lojas": 2
