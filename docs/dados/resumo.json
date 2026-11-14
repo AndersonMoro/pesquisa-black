@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-13T21:41-03:00",
+ "atualizado": "2026-11-13T21:54-03:00",
  "fonte": "Zoom",
  "produtos": [
   {
@@ -197,6 +197,10 @@
   {
    "entrada": "maison alhambra victorioso",
    "erro": "nenhum produto com esse nome exato no Zoom, Buscapé ou KaBuM. O mais parecido foi “Zoom: Perfume Maison Alhambra Infini Oud Edp 100mL”. Tente outro nome ou cole o link da página do produto."
+  },
+  {
+   "entrada": "Jogo pratos azul",
+   "erro": "nenhum produto com esse nome exato no Zoom, Buscapé ou KaBuM. O mais parecido foi “Zoom: Jogo de Pratos Fundos Duralex 6 Peças”. Tente outro nome ou cole o link da página do produto."
   }
  ]
 }
