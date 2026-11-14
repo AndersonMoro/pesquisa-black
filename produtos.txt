@@ -2,6 +2,7 @@
 #
 # Escreva o nome do produto (quanto mais específico, melhor)
 # ou cole o link da página do produto (Zoom, Buscapé, KaBuM ou outra loja).
+# Se o nome exato não existir, fica o resultado mais parecido.
 # Para avisar quando chegar num preço, acrescente " | valor".
 #
 # Exemplos (troque pelos seus):

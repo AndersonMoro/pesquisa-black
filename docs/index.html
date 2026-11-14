@@ -175,6 +175,7 @@ function cartao(p) {
     <div class="price"><b>${brl(p.preco)}</b><span>${esc(p.loja)}${p.n_lojas > 1 ? ` · ${p.n_lojas} lojas` : ""}${fonte !== p.loja ? ` · via ${esc(fonte)}` : ""}${dif}</span></div>
     <span class="badge ${a.veredito}">${esc(a.titulo)}</span>
     <p class="why">${esc(a.explicacao)}</p>
+    ${p.aproximado ? `<p class="why">Você pediu “${esc(p.entrada)}”. Este foi o resultado mais parecido; se não for o produto certo, remova e cole o link da página.</p>` : ""}
     <div class="chart">${grafico(p.serie, a.mediana)}</div>
     <div class="stats">
       <div>Mínimo${a.minimo_data ? " (" + dia(a.minimo_data) + ")" : ""}<b>${brl(a.minimo)}</b></div>
@@ -235,14 +236,13 @@ async function alterar(mudar, ok) {
     const j = await r.json();
     const texto = new TextDecoder().decode(Uint8Array.from(atob(j.content.replace(/\s/g, "")), c => c.charCodeAt(0)));
     const novo = mudar(texto.split(/\r?\n/)).join("\n").replace(/\n*$/, "\n");
-    if (novo === texto) { avisar(ok + " A lista já estava assim."); aguardarColeta(); return true; }
+    if (novo === texto) { avisar(ok + " A lista já estava assim."); return true; }
     const b64 = btoa(Array.from(new TextEncoder().encode(novo), b => String.fromCharCode(b)).join(""));
     const w = await fetch(API + "produtos.txt", { method: "PUT", headers: h,
       body: JSON.stringify({ message: "Lista de produtos atualizada pelo painel", content: b64, sha: j.sha }) });
     if (w.status === 403 || w.status === 404) throw new Error("a chave não tem permissão de escrita (Contents: Read and write) neste repositório.");
     if (!w.ok) throw new Error("o GitHub respondeu " + w.status + " ao salvar.");
-    avisar(ok + " A coleta roda sozinha; os preços atualizam aqui em 1 a 2 minutos.");
-    aguardarColeta();
+    aguardarColeta(ok);
     return true;
   } catch (e) {
     avisar("Não deu certo: " + (e.message || "sem conexão."));
@@ -327,17 +327,29 @@ async function buscarResumo() {
   return fetch("dados/resumo.json?t=" + Date.now()).then(r => r.json());
 }
 
-function aguardarColeta() {
+// contador na tela enquanto a coleta não chega; confere o resultado a cada 5 s
+function aguardarColeta(ok) {
   clearInterval(espera);
-  const antes = ultimaColeta;
-  let n = 0;
-  espera = setInterval(async () => {
-    if (++n > 20) return clearInterval(espera);
+  const antes = ultimaColeta, inicio = Date.now(), LIMITE = 900;
+  const relogio = () => { const s = Math.floor((Date.now() - inicio) / 1000); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); };
+  let ocupado = false;
+  const passo = async () => {
+    const s = Math.floor((Date.now() - inicio) / 1000);
+    if (s > LIMITE) {
+      clearInterval(espera);
+      return avisar(ok + " A pesquisa ainda não terminou depois de 15 minutos; recarregue a página mais tarde.");
+    }
+    avisar(`${ok} Pesquisando preços… ${relogio()}`);
+    if (s % 5 || ocupado) return;
+    ocupado = true;
     try {
       const d = await buscarResumo();
-      if (d.atualizado !== antes) { clearInterval(espera); mostrar(d); avisar("Preços atualizados."); }
+      if (d.atualizado !== antes) { clearInterval(espera); mostrar(d); avisar(`Preços atualizados em ${relogio()}.`); }
     } catch {}
-  }, 15000);
+    ocupado = false;
+  };
+  passo();
+  espera = setInterval(passo, 1000);
 }
 
 function mostrar(d) {

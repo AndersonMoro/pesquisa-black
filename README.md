@@ -12,8 +12,8 @@ Acompanha preços e histórico de preços para não cair em desconto falso na Bl
     na primeira coleta.
   - Mercado Livre, Amazon e Magazine Luiza bloqueiam leitura automática direta; os preços delas
     entram pelo Zoom/Buscapé.
-- **Busca por nome:** procura no Zoom, depois no Buscapé, depois na KaBuM, e só aceita um
-  resultado que contenha todas as palavras digitadas.
+- **Busca por nome:** procura no Zoom, depois no Buscapé, depois na KaBuM. Se nenhum resultado
+  tiver todas as palavras digitadas, fica com o mais parecido e o painel avisa no cartão.
 - **Rotina:** o GitHub Actions roda `coletor.py` a cada 2 horas e salva tudo em `docs/dados/`.
 - **Alertas:** Telegram. Um resumo por dia (primeira coleta depois das 8h) e aviso imediato
   quando o preço cai 3% ou mais, vira desconto real, atinge o preço-alvo ou é desconto maquiado.
@@ -33,7 +33,7 @@ iPhone 15 128GB | 3500
 https://www.zoom.com.br/celular/smartphone-apple-iphone-15-128gb-camera-dupla
 ```
 
-Ao salvar, a coleta roda sozinha. Se um nome não for encontrado, aparece um cartão de erro
+Ao salvar, a coleta roda sozinha. Se nada parecido for encontrado, aparece um cartão de erro
 no painel; nesse caso use o link do produto.
 
 ## Como o preço é julgado

@@ -19,6 +19,14 @@
   "13733949": {
    "preco": 360.99,
    "veredito": "normal"
+  },
+  "13334090": {
+   "preco": 379.0,
+   "veredito": "normal"
+  },
+  "10952099": {
+   "preco": 39.47,
+   "veredito": "normal"
   }
  },
  "buscas": {
@@ -32,6 +40,9 @@
   "iPhone 15 128GB": "https://www.zoom.com.br/celular/smartphone-apple-iphone-15-128gb-camera-dupla",
   "PlayStation 5 Slim": "https://www.zoom.com.br/console-de-video-game/console-playstation-5-slim-1tb-sony-4k-hdr",
   "Air Fryer Mondial 4L": "https://www.zoom.com.br/fritadeira/fritadeira-eletrica-sem-oleo-mondial-family-naf-03i-capacidade-total-4l-timer-com-desligamento-automatico",
-  "armaf club de nuit urban man elixir": "https://www.zoom.com.br/perfume/armaf-club-de-nuit-urban-man-elixir-eau-de-parfum-perfume-masculino"
+  "armaf club de nuit urban man elixir": "https://www.zoom.com.br/perfume/armaf-club-de-nuit-urban-man-elixir-eau-de-parfum-perfume-masculino",
+  "Nardo Oud Extrait de Parfum": "https://www.zoom.com.br/perfume/perfume-unisex-al-haramain-amber-oud-exclusif-bleu-extrait-de-parfum-60-ml",
+  "maison alhambra victorioso": "https://www.zoom.com.br/perfume/perfume-maison-alhambra-infini-oud-edp-100ml",
+  "Jogo pratos azul": "https://www.zoom.com.br/pratos-especiais-avulsos/jogo-de-pratos-fundos-duralex-6-pecas"
  }
 }
