@@ -274,6 +274,12 @@
    "preco": 360.99,
    "loja": "Magazine Luiza",
    "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-14T23:11-03:00",
+   "preco": 360.99,
+   "loja": "Magazine Luiza",
+   "n_lojas": 1
   }
  ],
  "lojas": {
