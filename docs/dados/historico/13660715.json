@@ -172,6 +172,10 @@
   "2026-11-16": {
    "preco": 909.14,
    "loja": "Webcontinental"
+  },
+  "2026-11-17": {
+   "preco": 909.14,
+   "loja": "Webcontinental"
   }
  },
  "coletas": [
@@ -312,6 +316,12 @@
    "preco": 909.14,
    "loja": "Webcontinental",
    "n_lojas": 2
+  },
+  {
+   "quando": "2026-11-17T07:38-03:00",
+   "preco": 909.14,
+   "loja": "Webcontinental",
+   "n_lojas": 2
   }
  ],
  "lojas": {
@@ -320,5 +330,5 @@
  },
  "nome": "Perfume Unisex Al Haramain Amber Oud Exclusif Bleu Extrait De Parfum 60 Ml",
  "url": "https://www.zoom.com.br/perfume/perfume-unisex-al-haramain-amber-oud-exclusif-bleu-extrait-de-parfum-60-ml",
- "imagem": "https://i.zst.com.br/thumbs/12/28/16/-1449417501.jpg"
+ "imagem": "https://image.zst.com.br/5DB00CAC83F47CBA0AACFD3BE6BCEAFC_810_590.jpg"
 }
