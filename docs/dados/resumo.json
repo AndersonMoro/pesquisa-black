@@ -858,14 +858,5 @@
    ]
   }
  ],
- "erros": [
-  {
-   "entrada": "https://www.zoom.com.br/lead?oid=1542997941&channel=86&index=2&experiencevariant=cro-12-2&searchterm=Prato%20raso%20com%20decora%C3%A7%C3%A3o%20azul",
-   "erro": "este link é de uma oferta avulsa, que leva direto à loja e não tem página de comparação nem histórico. Abra o link, copie o endereço da página da loja que aparecer e cole esse no lugar."
-  },
-  {
-   "entrada": "https://www.zoom.com.br/lead?oid=1564278857&channel=86&index=3&experiencevariant=cro-12-2&searchterm=Prato%20raso%20com%20decora%C3%A7%C3%A3o%20azul",
-   "erro": "este link é de uma oferta avulsa, que leva direto à loja e não tem página de comparação nem histórico. Abra o link, copie o endereço da página da loja que aparecer e cole esse no lugar."
-  }
- ]
+ "erros": []
 }
