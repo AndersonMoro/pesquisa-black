@@ -1,0 +1,21 @@
+{
+ "id": "lacadordeofertas-com-br-0cba33a2b1",
+ "dias": {
+  "2026-11-18": {
+   "preco": 149.9,
+   "loja": "lacadordeofertas.com.br"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-18T16:29-03:00",
+   "preco": 149.9,
+   "loja": "lacadordeofertas.com.br",
+   "n_lojas": 1
+  }
+ ],
+ "lojas": {},
+ "nome": "Passaporte Parque Aquático Indoor c/ Águas Termais",
+ "url": "https://www.lacadordeofertas.com.br/oferta/gramado-canela/acquamotion/passaporte-acquamotion-parque-aquatico-desconto?site_content=slider-ofertas-home-3-29856-5",
+ "imagem": "https://img.lacadordeofertas.com.br/site/MTgyNjhfL3RtcC9waHBmQ3lYVUZfMTYyNDk3MzU3Mw==.png"
+}
