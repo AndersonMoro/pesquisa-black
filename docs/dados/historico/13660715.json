@@ -374,6 +374,12 @@
    "preco": 909.14,
    "loja": "Webcontinental",
    "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-18T16:25-03:00",
+   "preco": 909.14,
+   "loja": "Webcontinental",
+   "n_lojas": 1
   }
  ],
  "lojas": {
