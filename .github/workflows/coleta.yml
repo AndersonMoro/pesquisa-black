@@ -5,7 +5,8 @@ on:
     - cron: "7,27,47 * * * *"   # a cada 20 min: o GitHub pula muitas execuções, assim sobra margem
   workflow_dispatch:           # botão "Run workflow" para rodar na hora
   push:
-    paths: [produtos.txt]      # roda ao editar a lista de produtos
+    branches: [main]
+    paths: [produtos.txt, disparo.txt]   # roda ao editar a lista ou ao receber um disparo de fora
 
 permissions:
   contents: write

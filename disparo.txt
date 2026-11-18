@@ -1,0 +1,2 @@
+# Mudar este arquivo no main dispara uma coleta (usado pelo agendador externo).
+configuracao
