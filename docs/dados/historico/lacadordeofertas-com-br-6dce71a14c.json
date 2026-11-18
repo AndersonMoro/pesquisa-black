@@ -1,0 +1,21 @@
+{
+ "id": "lacadordeofertas-com-br-6dce71a14c",
+ "dias": {
+  "2026-11-18": {
+   "preco": 129.9,
+   "loja": "lacadordeofertas.com.br"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-18T16:31-03:00",
+   "preco": 129.9,
+   "loja": "lacadordeofertas.com.br",
+   "n_lojas": 1
+  }
+ ],
+ "lojas": {},
+ "nome": "Mundo a Vapor:  MUITA História e Diversão!",
+ "url": "https://www.lacadordeofertas.com.br/oferta/canela/mundo-a-vapor/mundo-a-vapor-em-canela-com-desconto?site_content=slider-ofertas-home-79-29530-10",
+ "imagem": "https://img.lacadordeofertas.com.br/site/Mjg1ODdfL3RtcC9waHBnR2l5WExfMTc3ODE2NTU2OQ==.png"
+}

@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-18T16:29-03:00",
+ "atualizado": "2026-11-18T16:31-03:00",
  "fonte": "Zoom, lacadordeofertas.com.br",
  "produtos": [
   {
@@ -885,6 +885,37 @@
     [
      "2026-11-18",
      149.9
+    ]
+   ]
+  },
+  {
+   "id": "lacadordeofertas-com-br-6dce71a14c",
+   "nome": "Mundo a Vapor:  MUITA História e Diversão!",
+   "url": "https://www.lacadordeofertas.com.br/oferta/canela/mundo-a-vapor/mundo-a-vapor-em-canela-com-desconto?site_content=slider-ofertas-home-79-29530-10",
+   "imagem": "https://img.lacadordeofertas.com.br/site/Mjg1ODdfL3RtcC9waHBnR2l5WExfMTc3ODE2NTU2OQ==.png",
+   "entrada": "https://www.lacadordeofertas.com.br/oferta/canela/mundo-a-vapor/mundo-a-vapor-em-canela-com-desconto?site_content=slider-ofertas-home-79-29530-10",
+   "alvo": null,
+   "preco": 129.9,
+   "loja": "lacadordeofertas.com.br",
+   "fonte": "lacadordeofertas.com.br",
+   "n_lojas": 1,
+   "aproximado": false,
+   "analise": {
+    "dias_historico": 0,
+    "mediana": null,
+    "minimo": null,
+    "maximo": null,
+    "minimo_data": null,
+    "dif_mediana": null,
+    "pico_recente": null,
+    "veredito": "curto",
+    "titulo": "Histórico curto",
+    "explicacao": "Ainda há poucos dias de histórico para julgar este preço."
+   },
+   "serie": [
+    [
+     "2026-11-18",
+     129.9
     ]
    ]
   }
