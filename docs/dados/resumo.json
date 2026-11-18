@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-17T22:47-03:00",
+ "atualizado": "2026-11-18T06:15-03:00",
  "fonte": "Zoom",
  "produtos": [
   {
@@ -15,7 +15,7 @@
    "n_lojas": 2,
    "aproximado": true,
    "analise": {
-    "dias_historico": 43,
+    "dias_historico": 44,
     "mediana": 909.14,
     "minimo": 852.33,
     "maximo": 945.43,
@@ -202,6 +202,10 @@
     [
      "2026-11-17",
      909.14
+    ],
+    [
+     "2026-11-18",
+     909.14
     ]
    ]
   },
@@ -218,7 +222,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 43,
+    "dias_historico": 44,
     "mediana": 360.99,
     "minimo": 360.99,
     "maximo": 360.99,
@@ -405,6 +409,10 @@
     [
      "2026-11-17",
      360.99
+    ],
+    [
+     "2026-11-18",
+     360.99
     ]
    ]
   },
@@ -421,7 +429,7 @@
    "n_lojas": 1,
    "aproximado": true,
    "analise": {
-    "dias_historico": 14,
+    "dias_historico": 15,
     "mediana": 379.0,
     "minimo": 379.0,
     "maximo": 379.0,
@@ -492,6 +500,10 @@
     [
      "2026-11-17",
      379.0
+    ],
+    [
+     "2026-11-18",
+     379.0
     ]
    ]
   },
@@ -508,7 +520,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 32,
+    "dias_historico": 33,
     "mediana": 319.9,
     "minimo": 299.9,
     "maximo": 319.9,
@@ -650,6 +662,10 @@
     ],
     [
      "2026-11-17",
+     319.9
+    ],
+    [
+     "2026-11-18",
      319.9
     ]
    ]
