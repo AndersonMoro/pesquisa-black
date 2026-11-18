@@ -1,2 +1,2 @@
 # Mudar este arquivo no main dispara uma coleta (usado pelo agendador externo).
-configuracao
+2026-11-18T19:16Z teste
