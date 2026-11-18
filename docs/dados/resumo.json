@@ -920,5 +920,10 @@
    ]
   }
  ],
- "erros": []
+ "erros": [
+  {
+   "entrada": "https://www.tcheofertas.com.br/oferta/viagens-serra-gaucha-gramado-canela-diversao-lazer/ingresso-garden-park-gramado-desconto-promocao",
+   "erro": "não achei o preço na página do tcheofertas.com.br; o site pode bloquear leitura automática"
+  }
+ ]
 }
