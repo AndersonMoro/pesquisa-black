@@ -261,6 +261,10 @@ function ligarEdicao(el, entrada) {
       v ? "Preço-alvo atualizado." : "Preço-alvo removido.");
     if (feito) form.classList.remove("on");
   };
+  ligarRemover(el, entrada);
+}
+
+function ligarRemover(el, entrada) {
   const rm = el.querySelector('[data-a="rm"]');
   rm.onclick = async () => {
     if (!rm.dataset.certeza) { rm.dataset.certeza = 1; rm.textContent = "Confirmar remoção"; return; }
@@ -364,7 +368,9 @@ function mostrar(d) {
   d.erros.forEach(e => {
     const el = document.createElement("section");
     el.className = "card err";
-    el.innerHTML = `<b>${esc(e.entrada)}</b><br>Sem leitura: ${esc(e.erro)}`;
+    el.innerHTML = `<b>${esc(e.entrada)}</b><br>Sem leitura: ${esc(e.erro)}
+      <div class="foot"><span></span><span class="acts"><button class="ghost danger" data-a="rm" type="button">Remover</button></span></div>`;
+    ligarRemover(el, e.entrada);
     lista.append(el);
   });
   if (!d.produtos.length && !d.erros.length) lista.innerHTML = '<p class="card">Nenhum produto na lista ainda. Adicione o primeiro no campo acima.</p>';
