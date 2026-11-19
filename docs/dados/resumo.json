@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-18T21:34-03:00",
+ "atualizado": "2026-11-18T22:06-03:00",
  "fonte": "Zoom, lacadordeofertas.com.br",
  "produtos": [
   {
@@ -9,7 +9,7 @@
    "imagem": "https://image.zst.com.br/5DB00CAC83F47CBA0AACFD3BE6BCEAFC_810_590.jpg",
    "entrada": "Nardo Oud Extrait de Parfum",
    "alvo": null,
-   "preco": 909.14,
+   "preco": 1181.89,
    "loja": "Webcontinental",
    "fonte": "Zoom",
    "n_lojas": 1,
@@ -20,11 +20,11 @@
     "minimo": 852.33,
     "maximo": 945.43,
     "minimo_data": "2026-10-28",
-    "dif_mediana": 0.0,
+    "dif_mediana": 30.0,
     "pico_recente": 909.14,
-    "veredito": "normal",
-    "titulo": "Preço normal",
-    "explicacao": "Perto do preço normal dos últimos 30 dias (R$ 909,14). O mínimo já visto foi R$ 852,33."
+    "veredito": "caro",
+    "titulo": "Acima do normal",
+    "explicacao": "30% acima do preço normal (R$ 909,14). Se aparecer 'desconto' em cima disso, desconfie."
    },
    "serie": [
     [
