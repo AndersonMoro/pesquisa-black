@@ -13,6 +13,14 @@ Só leitura. Nunca compre, nunca adicione ao carrinho, nunca tire nem coloque it
 nunca mude nada nas contas. Se uma página pedir login, senha, código ou captcha, não preencha:
 registre como falha daquela loja e siga para a próxima.
 
+## 0. Ver se outro computador já leu
+
+A skill pode estar agendada em mais de um computador. Antes de abrir o navegador, use o conector
+do GitHub (`get_file_contents` em `andersonmoro/pesquisa-black`, caminho `favoritos.json`,
+ref `refs/heads/main`) e leia o campo `quando`. Se ele for de menos de 2 horas atrás, pare aqui
+e responda só: "Favoritos já lidos às HH:MM; nada a fazer." Se o arquivo não existir ou a
+leitura for mais antiga, siga.
+
 ## 1. Abrir o navegador
 
 Use o navegador em que o usuário já está logado nas lojas: Claude in Chrome (ferramentas
