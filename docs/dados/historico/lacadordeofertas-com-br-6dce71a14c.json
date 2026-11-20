@@ -98,6 +98,12 @@
    "preco": 129.9,
    "loja": "lacadordeofertas.com.br",
    "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-20T10:18-03:00",
+   "preco": 129.9,
+   "loja": "lacadordeofertas.com.br",
+   "n_lojas": 1
   }
  ],
  "lojas": {},
