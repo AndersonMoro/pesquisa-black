@@ -1,0 +1,29 @@
+{
+  "quando": "2026-11-20T15:37:08-03:00",
+  "itens": [
+    {
+      "loja": "Mercado Livre",
+      "nome": "Regata Masculina Modeladora Slim Alta Compressão Cinta Homem Preto 3xl",
+      "preco": 39.9,
+      "url": "https://www.mercadolivre.com.br/regata-masculina-modeladora-slim-alta-compressao-cinta-homem/up/MLBU4220998477",
+      "obs": "33% OFF (era R$ 59,90); Frete grátis"
+    },
+    {
+      "loja": "Mercado Livre",
+      "nome": "Camisas Plus Size Térmica Segunda Pele Proteção Uv Premium Preto Liso G3 (50)",
+      "preco": 24.0,
+      "url": "https://www.mercadolivre.com.br/camisas-plus-size-termica-segunda-pele-protecao-uv-premium/up/MLBU3928471781",
+      "obs": "39% OFF (era R$ 39,90); Frete grátis"
+    }
+  ],
+  "falhas": [
+    {
+      "loja": "Amazon",
+      "erro": "extensão sem permissão para ler amazon.com.br"
+    },
+    {
+      "loja": "Shopee",
+      "erro": "pediu login"
+    }
+  ]
+}
