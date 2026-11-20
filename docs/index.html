@@ -175,6 +175,7 @@ function cartao(p) {
     <div class="price"><b>${brl(p.preco)}</b><span>${esc(p.loja)}${p.n_lojas > 1 ? ` · ${p.n_lojas} lojas` : ""}${fonte !== p.loja ? ` · via ${esc(fonte)}` : ""}${dif}</span></div>
     <span class="badge ${a.veredito}">${esc(a.titulo)}</span>
     <p class="why">${esc(a.explicacao)}</p>
+    ${p.favorito ? `<p class="why">⭐ Dos seus favoritos em ${esc(p.loja)}. Para parar de acompanhar, tire dos favoritos no site.${p.obs ? " " + esc(p.obs) : ""}</p>` : ""}
     ${p.aproximado ? `<p class="why">Você pediu “${esc(p.entrada)}”. Este foi o resultado mais parecido; se não for o produto certo, remova e cole o link da página.</p>` : ""}
     <div class="chart">${grafico(p.serie, a.mediana)}</div>
     <div class="stats">
@@ -183,15 +184,15 @@ function cartao(p) {
       <div>Máximo<b>${brl(a.maximo)}</b></div>
     </div>
     <div class="foot">${alvo}<span class="acts">
-      <button class="ghost" data-a="alvo" type="button">Mudar alvo</button>
-      <button class="ghost danger" data-a="rm" type="button">Remover</button>
+      ${p.favorito ? "" : `<button class="ghost" data-a="alvo" type="button">Mudar alvo</button>
+      <button class="ghost danger" data-a="rm" type="button">Remover</button>`}
       <a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(fonte)} →</a></span></div>
     <form class="row editalvo">
       <input inputmode="decimal" placeholder="Novo preço-alvo (vazio = sem alvo)" value="${p.alvo ?? ""}" aria-label="Novo preço-alvo">
       <button>OK</button>
     </form>`;
   ligarToque(el.querySelector(".chart"), p.serie);
-  ligarEdicao(el, p.entrada);
+  if (!p.favorito) ligarEdicao(el, p.entrada);
   return el;
 }
 
@@ -368,9 +369,9 @@ function mostrar(d) {
   d.erros.forEach(e => {
     const el = document.createElement("section");
     el.className = "card err";
-    el.innerHTML = `<b>${esc(e.entrada)}</b><br>Sem leitura: ${esc(e.erro)}
-      <div class="foot"><span></span><span class="acts"><button class="ghost danger" data-a="rm" type="button">Remover</button></span></div>`;
-    ligarRemover(el, e.entrada);
+    el.innerHTML = `<b>${esc(e.entrada)}</b><br>Sem leitura: ${esc(e.erro)}` + (e.favorito ? "" :
+      `<div class="foot"><span></span><span class="acts"><button class="ghost danger" data-a="rm" type="button">Remover</button></span></div>`);
+    if (!e.favorito) ligarRemover(el, e.entrada);
     lista.append(el);
   });
   if (!d.produtos.length && !d.erros.length) lista.innerHTML = '<p class="card">Nenhum produto na lista ainda. Adicione o primeiro no campo acima.</p>';
