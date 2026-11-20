@@ -8,6 +8,10 @@
   "2026-11-19": {
    "preco": 149.9,
    "loja": "lacadordeofertas.com.br"
+  },
+  "2026-11-20": {
+   "preco": 149.9,
+   "loja": "lacadordeofertas.com.br"
   }
  },
  "coletas": [
@@ -85,6 +89,12 @@
   },
   {
    "quando": "2026-11-19T22:05-03:00",
+   "preco": 149.9,
+   "loja": "lacadordeofertas.com.br",
+   "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-20T01:20-03:00",
    "preco": 149.9,
    "loja": "lacadordeofertas.com.br",
    "n_lojas": 1

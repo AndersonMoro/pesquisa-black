@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-19T22:05-03:00",
+ "atualizado": "2026-11-20T01:20-03:00",
  "fonte": "Zoom, lacadordeofertas.com.br",
  "produtos": [
   {
@@ -15,7 +15,7 @@
    "n_lojas": 1,
    "aproximado": true,
    "analise": {
-    "dias_historico": 45,
+    "dias_historico": 46,
     "mediana": 909.14,
     "minimo": 852.33,
     "maximo": 945.43,
@@ -210,6 +210,10 @@
     [
      "2026-11-19",
      909.14
+    ],
+    [
+     "2026-11-20",
+     1181.89
     ]
    ]
   },
@@ -226,7 +230,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 45,
+    "dias_historico": 46,
     "mediana": 360.99,
     "minimo": 360.99,
     "maximo": 360.99,
@@ -421,6 +425,10 @@
     [
      "2026-11-19",
      360.99
+    ],
+    [
+     "2026-11-20",
+     360.99
     ]
    ]
   },
@@ -437,13 +445,13 @@
    "n_lojas": 1,
    "aproximado": true,
    "analise": {
-    "dias_historico": 16,
+    "dias_historico": 17,
     "mediana": 379.0,
     "minimo": 379.0,
     "maximo": 379.0,
     "minimo_data": "2026-11-03",
     "dif_mediana": 0.0,
-    "pico_recente": null,
+    "pico_recente": 379.0,
     "veredito": "normal",
     "titulo": "Preço normal",
     "explicacao": "Perto do preço normal dos últimos 30 dias (R$ 379,00). O mínimo já visto foi R$ 379,00."
@@ -516,6 +524,10 @@
     [
      "2026-11-19",
      379.0
+    ],
+    [
+     "2026-11-20",
+     379.0
     ]
    ]
   },
@@ -532,7 +544,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 34,
+    "dias_historico": 35,
     "mediana": 319.9,
     "minimo": 299.9,
     "maximo": 319.9,
@@ -683,6 +695,10 @@
     [
      "2026-11-19",
      319.9
+    ],
+    [
+     "2026-11-20",
+     319.9
     ]
    ]
   },
@@ -699,16 +715,16 @@
    "n_lojas": 2,
    "aproximado": false,
    "analise": {
-    "dias_historico": 40,
-    "mediana": 2743.0,
+    "dias_historico": 41,
+    "mediana": 3157.0,
     "minimo": 1872.9,
     "maximo": 3157.0,
     "minimo_data": "2026-10-21",
-    "dif_mediana": 15.1,
+    "dif_mediana": 0.0,
     "pico_recente": 3157.0,
-    "veredito": "caro",
-    "titulo": "Acima do normal",
-    "explicacao": "15% acima do preço normal (R$ 2.743,00). Se aparecer 'desconto' em cima disso, desconfie."
+    "veredito": "normal",
+    "titulo": "Preço normal",
+    "explicacao": "Perto do preço normal dos últimos 30 dias (R$ 3.157,00). O mínimo já visto foi R$ 1.872,90."
    },
    "serie": [
     [
@@ -874,6 +890,10 @@
     [
      "2026-11-19",
      3157.0
+    ],
+    [
+     "2026-11-20",
+     3157.0
     ]
    ]
   },
@@ -890,7 +910,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 1,
+    "dias_historico": 2,
     "mediana": null,
     "minimo": null,
     "maximo": null,
@@ -908,6 +928,10 @@
     ],
     [
      "2026-11-19",
+     149.9
+    ],
+    [
+     "2026-11-20",
      149.9
     ]
    ]
@@ -925,7 +949,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 1,
+    "dias_historico": 2,
     "mediana": null,
     "minimo": null,
     "maximo": null,
@@ -943,6 +967,10 @@
     ],
     [
      "2026-11-19",
+     129.9
+    ],
+    [
+     "2026-11-20",
      129.9
     ]
    ]
