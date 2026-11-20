@@ -33,6 +33,7 @@ DADOS = RAIZ / "docs" / "dados"
 ARQ_RESUMO = DADOS / "resumo.json"
 ARQ_ESTADO = DADOS / "estado.json"
 DIR_HIST = DADOS / "historico"
+ARQ_FAV = RAIZ / "favoritos.json"     # gravado pela skill que lê os favoritos no Chrome
 
 ZOOM = "https://www.zoom.com.br"
 BUSCAPE = "https://www.buscape.com.br"
@@ -468,6 +469,82 @@ def eventos_do_produto(p: dict, mem: dict) -> list[str]:
     return ev
 
 
+# ---------------------------------------------------------------- favoritos (Chrome)
+
+def chave_item(url: str) -> str:
+    """Identificador estável do anúncio, para o histórico não se perder se o link mudar."""
+    for padrao, prefixo in ((r"MLB-?(\d{6,})", "ml"),
+                            (r"/(?:dp|gp/product)/([A-Z0-9]{10})", "amz"),
+                            (r"i\.(\d+)\.(\d+)", "shp"),
+                            (r"/product/(\d+)/(\d+)", "shp")):
+        m = re.search(padrao, url, re.I)
+        if m:
+            return prefixo + "-" + "-".join(m.groups())
+    base = urllib.parse.urlsplit(url)
+    return "fav-" + hashlib.md5(f"{base.netloc}{base.path}".encode()).hexdigest()[:10]
+
+
+def processar_favoritos(estado: dict, memoria: dict, agora: datetime, hoje: str):
+    """Lê favoritos.json. Só grava histórico e monta o aviso quando a leitura é nova."""
+    if not ARQ_FAV.exists():
+        return [], [], None
+    try:
+        fav = json.loads(ARQ_FAV.read_text(encoding="utf-8"))
+    except ValueError as e:
+        return [], [{"entrada": "Favoritos", "erro": f"favoritos.json inválido: {e}",
+                     "favorito": True}], None
+    quando_txt = str(fav.get("quando") or "")
+    nova = bool(quando_txt) and quando_txt != estado.get("favoritos_lidos")
+    try:
+        quando = datetime.fromisoformat(quando_txt.replace("Z", "+00:00")).astimezone(BRT)
+    except ValueError:
+        quando = agora
+
+    produtos, erros, linhas = [], [], []
+    for it in fav.get("itens") or []:
+        loja = str(it.get("loja") or "Loja")
+        try:
+            url = str(it.get("url") or "")
+            preco = numero(it.get("preco"))
+            if not url.startswith("http") or not preco or preco <= 0:
+                raise ValueError("sem link ou sem preço")
+            c = {"id": chave_item(url), "nome": html.unescape(str(it.get("nome") or url))[:200],
+                 "url": url, "imagem": it.get("imagem"), "preco": round(preco, 2),
+                 "loja": loja, "fonte": loja, "n_lojas": 1, "lojas": {}, "dias_zoom": {}}
+            arq = DIR_HIST / f"{c['id']}.json"
+            if nova or not arq.exists():
+                h = atualizar_historico(c, quando)
+            else:
+                h = json.loads(arq.read_text(encoding="utf-8"))
+            p = {"id": c["id"], "nome": c["nome"], "url": url, "imagem": c["imagem"],
+                 "entrada": url, "alvo": None, "preco": c["preco"], "loja": loja,
+                 "fonte": loja, "n_lojas": 1, "favorito": True,
+                 "obs": str(it["obs"])[:300] if it.get("obs") else None,
+                 "analise": analisar(h, c["preco"], hoje),
+                 "serie": [[d, v["preco"]] for d, v in h["dias"].items()][-120:]}
+            produtos.append(p)
+            if nova:
+                ev = eventos_do_produto(p, memoria.setdefault(c["id"], {}))
+                linhas.append(linha_produto(p) + "".join(f"\n   {txt(e)}" for e in ev)
+                              + (f"\n   {txt(p['obs'])}" if p["obs"] else ""))
+        except Exception as e:
+            erros.append({"entrada": f"{loja}: {it.get('nome') or it.get('url') or '?'}",
+                          "erro": f"leitura do favorito inválida ({e})", "favorito": True})
+    for f in fav.get("falhas") or []:
+        erros.append({"entrada": f"Favoritos {f.get('loja') or ''}".strip(),
+                      "erro": str(f.get("erro") or "não leu"), "favorito": True})
+
+    texto = None
+    if nova:
+        estado["favoritos_lidos"] = quando_txt
+        texto = (f"⭐ <b>Favoritos {quando.strftime('%d/%m %H:%M')}</b>\n\n"
+                 + ("\n\n".join(linhas) or "Nenhum item lido."))
+        falhas = [f"{f.get('loja')}: {f.get('erro')}" for f in fav.get("falhas") or []]
+        if falhas:
+            texto += "\n\n⚠️ Sem leitura: " + "; ".join(txt(x) for x in falhas)
+    return produtos, erros, texto
+
+
 # ---------------------------------------------------------------- principal
 
 def main() -> int:
@@ -505,6 +582,11 @@ def main() -> int:
             print(f"  ! {e}")
         time.sleep(0.5)
 
+    fav_produtos, fav_erros, fav_texto = processar_favoritos(estado, memoria, agora, hoje)
+    produtos += fav_produtos
+    erros += fav_erros
+    print(f"{len(fav_produtos)} favorito(s) do Chrome" + (" (leitura nova)" if fav_texto else ""))
+
     ARQ_RESUMO.write_text(json.dumps({
         "atualizado": agora.isoformat(timespec="minutes"),
         "fonte": ", ".join(sorted({p["fonte"] for p in produtos})) or "Zoom",
@@ -513,6 +595,9 @@ def main() -> int:
 
     painel = os.environ.get("PAINEL_URL", "")
     rodape = f"\n\n<a href=\"{painel}\">Abrir painel</a>" if painel else ""
+
+    if fav_texto:                       # cada leitura dos favoritos vira uma mensagem
+        telegram(fav_texto + rodape)
 
     if alertas:
         telegram("🔔 <b>Alerta de preço</b>\n\n" + "\n\n".join(alertas) + rodape)

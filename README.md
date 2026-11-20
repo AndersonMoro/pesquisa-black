@@ -17,6 +17,10 @@ Acompanha preços e histórico de preços para não cair em desconto falso na Bl
 - **Rotina:** o GitHub Actions tenta rodar `coletor.py` a cada 20 minutos (o GitHub atrasa e pula muitas execuções) e salva tudo em `docs/dados/`.
 - **Agendador externo:** como o agendamento do GitHub falha muito, uma tarefa agendada no Claude
   muda `disparo.txt` no `main` às 8h05, 18h05 e 22h05, o que dispara a coleta.
+- **Favoritos (Chrome):** a skill [`monitor-favoritos`](skills/monitor-favoritos/SKILL.md), rodando
+  no Claude do computador, lê os favoritos do Mercado Livre, da Amazon e da Shopee no Chrome e
+  grava em `favoritos.json`. Cada leitura nova entra no histórico e no painel e gera uma
+  mensagem no Telegram. O histórico desses itens começa na primeira leitura.
 - **Alertas:** Telegram. Um resumo por dia (primeira coleta depois das 8h) e aviso imediato
   quando o preço cai 3% ou mais, vira desconto real, atinge o preço-alvo ou é desconto maquiado.
 
