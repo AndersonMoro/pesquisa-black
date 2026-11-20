@@ -37,7 +37,7 @@ Em cada uma:
      Tire parâmetros de rastreio quando o link continuar funcionando sem eles.
    - `imagem` (opcional): o link da foto.
    - `obs` (opcional, curta): só fatos que a loja mostra, como "A Amazon diz: preço caiu 12%
-     desde que foi adicionado" ou "Indisponível" ou "Frete grátis". Não invente histórico.
+     desde que foi adicionado" ou "Frete grátis". Não invente histórico.
 3. Não inclua itens indisponíveis ou sem preço.
 4. Se a loja não abrir, pedir login ou não mostrar a lista, registre em `falhas`
    (`{"loja": "Shopee", "erro": "pediu login"}`) e siga.
