@@ -1,6 +1,6 @@
 {
- "atualizado": "2026-11-21T08:05-03:00",
- "fonte": "Mercado Livre, Zoom, lacadordeofertas.com.br",
+ "atualizado": "2026-11-21T14:20-03:00",
+ "fonte": "Amazon, Zoom, lacadordeofertas.com.br",
  "produtos": [
   {
    "id": "13660715",
@@ -1004,20 +1004,20 @@
    ]
   },
   {
-   "id": "fav-59c063fff7",
-   "nome": "Regata Masculina Modeladora Slim Alta Compressão Cinta Homem Preto 3xl",
-   "url": "https://www.mercadolivre.com.br/regata-masculina-modeladora-slim-alta-compressao-cinta-homem/up/MLBU4220998477",
-   "imagem": null,
-   "entrada": "https://www.mercadolivre.com.br/regata-masculina-modeladora-slim-alta-compressao-cinta-homem/up/MLBU4220998477",
+   "id": "amz-B0GV5XP2R3",
+   "nome": "Kit 3 Essências Via Aroma Lavanda Francesa Bamboo e Vanilla 30ml | Para aromatização de salas, quartos, banheiros e escritórios.",
+   "url": "https://www.amazon.com.br/dp/B0GV5XP2R3",
+   "imagem": "https://m.media-amazon.com/images/I/41CPCqAtitL._SS135_.jpg",
+   "entrada": "https://www.amazon.com.br/dp/B0GV5XP2R3",
    "alvo": null,
-   "preco": 39.9,
-   "loja": "Mercado Livre",
-   "fonte": "Mercado Livre",
+   "preco": 44.91,
+   "loja": "Amazon",
+   "fonte": "Amazon",
    "n_lojas": 1,
    "favorito": true,
-   "obs": "33% OFF (era R$ 59,90); Frete grátis",
+   "obs": "Oferta Black Friday: 10% off (de R$ 49,90)",
    "analise": {
-    "dias_historico": 1,
+    "dias_historico": 0,
     "mediana": null,
     "minimo": null,
     "maximo": null,
@@ -1030,53 +1030,16 @@
    },
    "serie": [
     [
-     "2026-11-20",
-     39.9
-    ]
-   ]
-  },
-  {
-   "id": "fav-aa03f14e9d",
-   "nome": "Camisas Plus Size Térmica Segunda Pele Proteção Uv Premium Preto Liso G3 (50)",
-   "url": "https://www.mercadolivre.com.br/camisas-plus-size-termica-segunda-pele-protecao-uv-premium/up/MLBU3928471781",
-   "imagem": null,
-   "entrada": "https://www.mercadolivre.com.br/camisas-plus-size-termica-segunda-pele-protecao-uv-premium/up/MLBU3928471781",
-   "alvo": null,
-   "preco": 24.0,
-   "loja": "Mercado Livre",
-   "fonte": "Mercado Livre",
-   "n_lojas": 1,
-   "favorito": true,
-   "obs": "39% OFF (era R$ 39,90); Frete grátis",
-   "analise": {
-    "dias_historico": 1,
-    "mediana": null,
-    "minimo": null,
-    "maximo": null,
-    "minimo_data": null,
-    "dif_mediana": null,
-    "pico_recente": null,
-    "veredito": "curto",
-    "titulo": "Histórico curto",
-    "explicacao": "Ainda há poucos dias de histórico para julgar este preço."
-   },
-   "serie": [
-    [
-     "2026-11-20",
-     24.0
+     "2026-11-21",
+     44.91
     ]
    ]
   }
  ],
  "erros": [
   {
-   "entrada": "Favoritos Amazon",
-   "erro": "extensão sem permissão para ler amazon.com.br",
-   "favorito": true
-  },
-  {
-   "entrada": "Favoritos Shopee",
-   "erro": "pediu login",
+   "entrada": "Favoritos Mercado Livre",
+   "erro": "lista de favoritos vazia na conta logada no Chrome (CENTER H...); possivelmente outra conta",
    "favorito": true
   }
  ]

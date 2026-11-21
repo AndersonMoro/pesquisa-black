@@ -1,0 +1,21 @@
+{
+ "id": "amz-B0GV5XP2R3",
+ "dias": {
+  "2026-11-21": {
+   "preco": 44.91,
+   "loja": "Amazon"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-21T14:20-03:00",
+   "preco": 44.91,
+   "loja": "Amazon",
+   "n_lojas": 1
+  }
+ ],
+ "lojas": {},
+ "nome": "Kit 3 Essências Via Aroma Lavanda Francesa Bamboo e Vanilla 30ml | Para aromatização de salas, quartos, banheiros e escritórios.",
+ "url": "https://www.amazon.com.br/dp/B0GV5XP2R3",
+ "imagem": "https://m.media-amazon.com/images/I/41CPCqAtitL._SS135_.jpg"
+}
