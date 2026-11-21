@@ -1,29 +1,16 @@
 {
-  "quando": "2026-11-20T15:37:08-03:00",
+  "quando": "2026-11-21T14:20:18-03:00",
   "itens": [
     {
-      "loja": "Mercado Livre",
-      "nome": "Regata Masculina Modeladora Slim Alta Compressão Cinta Homem Preto 3xl",
-      "preco": 39.9,
-      "url": "https://www.mercadolivre.com.br/regata-masculina-modeladora-slim-alta-compressao-cinta-homem/up/MLBU4220998477",
-      "obs": "33% OFF (era R$ 59,90); Frete grátis"
-    },
-    {
-      "loja": "Mercado Livre",
-      "nome": "Camisas Plus Size Térmica Segunda Pele Proteção Uv Premium Preto Liso G3 (50)",
-      "preco": 24.0,
-      "url": "https://www.mercadolivre.com.br/camisas-plus-size-termica-segunda-pele-protecao-uv-premium/up/MLBU3928471781",
-      "obs": "39% OFF (era R$ 39,90); Frete grátis"
+      "loja": "Amazon",
+      "nome": "Kit 3 Essências Via Aroma Lavanda Francesa Bamboo e Vanilla 30ml | Para aromatização de salas, quartos, banheiros e escritórios.",
+      "preco": 44.91,
+      "url": "https://www.amazon.com.br/dp/B0GV5XP2R3",
+      "imagem": "https://m.media-amazon.com/images/I/41CPCqAtitL._SS135_.jpg",
+      "obs": "Oferta Black Friday: 10% off (de R$ 49,90)"
     }
   ],
   "falhas": [
-    {
-      "loja": "Amazon",
-      "erro": "extensão sem permissão para ler amazon.com.br"
-    },
-    {
-      "loja": "Shopee",
-      "erro": "pediu login"
-    }
+    {"loja": "Mercado Livre", "erro": "lista de favoritos vazia na conta logada no Chrome (CENTER H...); possivelmente outra conta"}
   ]
 }
