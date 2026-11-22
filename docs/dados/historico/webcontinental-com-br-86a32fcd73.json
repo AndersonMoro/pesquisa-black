@@ -1,0 +1,21 @@
+{
+ "id": "webcontinental-com-br-86a32fcd73",
+ "dias": {
+  "2026-11-22": {
+   "preco": 48.93,
+   "loja": "webcontinental.com.br"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-22T20:41-03:00",
+   "preco": 48.93,
+   "loja": "webcontinental.com.br",
+   "n_lojas": 1
+  }
+ ],
+ "lojas": {},
+ "nome": "Prato Raso Coup Frutela 29cm Azul Cerâmica Alleanza.",
+ "url": "https://www.webcontinental.com.br/prato-raso-coup-frutela-29cm-azul-ceramica-alleanza-005643007468/p?utm_medium=cpc&utm_source=zoom&utm_campaign=1c7b11dc83bc4006a936472b21ce5479",
+ "imagem": "https://lojawebcontinental.vtexassets.com/arquivos/ids/68967265/MKP005643007468-1.jpg?v=638869728387300000"
+}

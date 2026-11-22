@@ -1,6 +1,6 @@
 {
- "atualizado": "2026-11-22T20:33-03:00",
- "fonte": "Amazon, Zoom, lacadordeofertas.com.br",
+ "atualizado": "2026-11-22T20:41-03:00",
+ "fonte": "Amazon, Zoom, lacadordeofertas.com.br, webcontinental.com.br",
  "produtos": [
   {
    "id": "13660715",
@@ -1028,6 +1028,37 @@
     [
      "2026-11-22",
      129.9
+    ]
+   ]
+  },
+  {
+   "id": "webcontinental-com-br-86a32fcd73",
+   "nome": "Prato Raso Coup Frutela 29cm Azul Cerâmica Alleanza.",
+   "url": "https://www.webcontinental.com.br/prato-raso-coup-frutela-29cm-azul-ceramica-alleanza-005643007468/p?utm_medium=cpc&utm_source=zoom&utm_campaign=1c7b11dc83bc4006a936472b21ce5479",
+   "imagem": "https://lojawebcontinental.vtexassets.com/arquivos/ids/68967265/MKP005643007468-1.jpg?v=638869728387300000",
+   "entrada": "https://www.webcontinental.com.br/prato-raso-coup-frutela-29cm-azul-ceramica-alleanza-005643007468/p?utm_medium=cpc&utm_source=zoom&utm_campaign=1c7b11dc83bc4006a936472b21ce5479",
+   "alvo": null,
+   "preco": 48.93,
+   "loja": "webcontinental.com.br",
+   "fonte": "webcontinental.com.br",
+   "n_lojas": 1,
+   "aproximado": false,
+   "analise": {
+    "dias_historico": 0,
+    "mediana": null,
+    "minimo": null,
+    "maximo": null,
+    "minimo_data": null,
+    "dif_mediana": null,
+    "pico_recente": null,
+    "veredito": "curto",
+    "titulo": "Histórico curto",
+    "explicacao": "Ainda há poucos dias de histórico para julgar este preço."
+   },
+   "serie": [
+    [
+     "2026-11-22",
+     48.93
     ]
    ]
   },
