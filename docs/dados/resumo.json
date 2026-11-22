@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-22T20:41-03:00",
+ "atualizado": "2026-11-22T20:43-03:00",
  "fonte": "Amazon, Zoom, lacadordeofertas.com.br, webcontinental.com.br",
  "produtos": [
   {
@@ -1096,6 +1096,10 @@
   }
  ],
  "erros": [
+  {
+   "entrada": "https://www.magazineluiza.com.br/prato-raso-fiore-ceramica-azul-acasa-acasa/p/fb8jhjc7e2/ud/prra/?utm_source=zoom&utm_medium=cpa&partner_id=77341&utm_content=none_roa_amp_4p_cpa_none_tod_none&seller_id=angeloni2&utm_term=e89246f7d59b4352adc55ee78f40a60a&utm_campaign=e89246f7d59b4352adc55ee78f40a60a",
+   "erro": "magazineluiza.com.br não deixou ler a página (bloqueia leitura automática ou o link está errado): falha ao baixar https://www.magazineluiza.com.br/prato-raso-fiore-ceramica-azul-acasa-acasa/p/fb8jhjc7e2/ud/prra/?utm_source=zoom&utm_medium=cpa&partner_id=77341&utm_content=none_roa_amp_4p_cpa_none_tod_none&seller_id=angeloni2&utm_term=e89246f7d59b4352adc55ee78f40a60a&utm_campaign=e89246f7d59b4352adc55ee78f40a60a: HTTP Error 403: Forbidden"
+  },
   {
    "entrada": "Favoritos Mercado Livre",
    "erro": "lista de favoritos vazia na conta logada no Chrome (CENTER H...); possivelmente outra conta",
