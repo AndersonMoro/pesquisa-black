@@ -192,6 +192,10 @@
   "2026-11-21": {
    "preco": 1181.89,
    "loja": "Webcontinental"
+  },
+  "2026-11-22": {
+   "preco": 1181.89,
+   "loja": "Webcontinental"
   }
  },
  "coletas": [
@@ -563,6 +567,12 @@
   },
   {
    "quando": "2026-11-21T23:30-03:00",
+   "preco": 1181.89,
+   "loja": "Webcontinental",
+   "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-22T07:20-03:00",
    "preco": 1181.89,
    "loja": "Webcontinental",
    "n_lojas": 1
