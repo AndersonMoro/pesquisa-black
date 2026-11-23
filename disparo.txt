@@ -1,2 +1,2 @@
 # Mudar este arquivo no main dispara uma coleta (usado pelo agendador externo).
-2026-11-22T21:05Z
+2026-11-23T01:06Z
