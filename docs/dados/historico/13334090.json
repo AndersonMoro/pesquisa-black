@@ -586,6 +586,12 @@
    "preco": 379.0,
    "loja": "Americanas",
    "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-25T18:06-03:00",
+   "preco": 379.0,
+   "loja": "Americanas",
+   "n_lojas": 1
   }
  ],
  "lojas": {
