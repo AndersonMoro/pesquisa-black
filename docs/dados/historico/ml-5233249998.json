@@ -1,0 +1,21 @@
+{
+ "id": "ml-5233249998",
+ "dias": {
+  "2026-11-26": {
+   "preco": 310.0,
+   "loja": "Mercado Livre"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-26T12:02-03:00",
+   "preco": 310.0,
+   "loja": "Mercado Livre",
+   "n_lojas": 1
+  }
+ ],
+ "lojas": {},
+ "nome": "Mala De Viagem Avião Policarbonato 10kg",
+ "url": "https://produto.mercadolivre.com.br/MLB-5233249998-mala-de-viagem-avio-policarbonato-10kg-_JM",
+ "imagem": "https://http2.mlstatic.com/D_Q_NP_2X_804684-MLB91955878105_092025-V-mala-de-viagem-avio-policarbonato-10kg.webp"
+}

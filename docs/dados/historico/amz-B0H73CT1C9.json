@@ -1,0 +1,21 @@
+{
+ "id": "amz-B0H73CT1C9",
+ "dias": {
+  "2026-11-26": {
+   "preco": 39.99,
+   "loja": "Amazon"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-26T12:02-03:00",
+   "preco": 39.99,
+   "loja": "Amazon",
+   "n_lojas": 1
+  }
+ ],
+ "lojas": {},
+ "nome": "Kit 3 Potes Herméticos para Geladeira com Escorredor Removível | Organizadores de Alimentos Transparentes | Tampa com Vedação Hermética | Livre de BPA | Empilháveis | 850ml, 1750ml e 3300ml",
+ "url": "https://www.amazon.com.br/dp/B0H73CT1C9",
+ "imagem": "https://m.media-amazon.com/images/I/41GKXibdkIL._SS135_.jpg"
+}

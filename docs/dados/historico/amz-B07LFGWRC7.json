@@ -1,0 +1,21 @@
+{
+ "id": "amz-B07LFGWRC7",
+ "dias": {
+  "2026-11-26": {
+   "preco": 21.09,
+   "loja": "Amazon"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-26T12:02-03:00",
+   "preco": 21.09,
+   "loja": "Amazon",
+   "n_lojas": 1
+  }
+ ],
+ "lojas": {},
+ "nome": "Clear Shampoo Men Anticaspa Ice Cool Menthol 400Ml | Anticaspa mentolado refrescante",
+ "url": "https://www.amazon.com.br/dp/B07LFGWRC7",
+ "imagem": "https://m.media-amazon.com/images/I/41k6AMqjx8L._SS135_.jpg"
+}

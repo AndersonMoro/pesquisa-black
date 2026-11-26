@@ -1,0 +1,21 @@
+{
+ "id": "amz-B0F4JSFBNW",
+ "dias": {
+  "2026-11-26": {
+   "preco": 149.99,
+   "loja": "Amazon"
+  }
+ },
+ "coletas": [
+  {
+   "quando": "2026-11-26T12:02-03:00",
+   "preco": 149.99,
+   "loja": "Amazon",
+   "n_lojas": 1
+  }
+ ],
+ "lojas": {},
+ "nome": "Kit 4 Organizadores de Geladeira com Tampa e Divisórias – Transparente com Cesto Removível – Ideal para Frutas, Legumes e Alimentos – BPA Free",
+ "url": "https://www.amazon.com.br/dp/B0F4JSFBNW",
+ "imagem": "https://m.media-amazon.com/images/I/41AJpVHHqEL._SS135_.jpg"
+}

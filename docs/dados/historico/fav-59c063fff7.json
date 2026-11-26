@@ -4,6 +4,10 @@
   "2026-11-20": {
    "preco": 39.9,
    "loja": "Mercado Livre"
+  },
+  "2026-11-26": {
+   "preco": 39.9,
+   "loja": "Mercado Livre"
   }
  },
  "coletas": [
@@ -12,10 +16,16 @@
    "preco": 39.9,
    "loja": "Mercado Livre",
    "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-26T12:02-03:00",
+   "preco": 39.9,
+   "loja": "Mercado Livre",
+   "n_lojas": 1
   }
  ],
  "lojas": {},
  "nome": "Regata Masculina Modeladora Slim Alta Compressão Cinta Homem Preto 3xl",
  "url": "https://www.mercadolivre.com.br/regata-masculina-modeladora-slim-alta-compressao-cinta-homem/up/MLBU4220998477",
- "imagem": null
+ "imagem": "https://http2.mlstatic.com/D_Q_NP_2X_851084-MLB114187941369_072026-V.webp"
 }

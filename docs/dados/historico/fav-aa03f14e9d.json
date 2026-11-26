@@ -4,6 +4,10 @@
   "2026-11-20": {
    "preco": 24.0,
    "loja": "Mercado Livre"
+  },
+  "2026-11-26": {
+   "preco": 24.0,
+   "loja": "Mercado Livre"
   }
  },
  "coletas": [
@@ -12,10 +16,16 @@
    "preco": 24.0,
    "loja": "Mercado Livre",
    "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-26T12:02-03:00",
+   "preco": 24.0,
+   "loja": "Mercado Livre",
+   "n_lojas": 1
   }
  ],
  "lojas": {},
  "nome": "Camisas Plus Size Térmica Segunda Pele Proteção Uv Premium Preto Liso G3 (50)",
  "url": "https://www.mercadolivre.com.br/camisas-plus-size-termica-segunda-pele-protecao-uv-premium/up/MLBU3928471781",
- "imagem": null
+ "imagem": "https://http2.mlstatic.com/D_Q_NP_2X_621731-MLB105977865256_022026-V.webp"
 }

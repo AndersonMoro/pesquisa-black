@@ -1,6 +1,6 @@
 {
- "atualizado": "2026-11-26T08:06-03:00",
- "fonte": "Amazon, Zoom, lacadordeofertas.com.br, webcontinental.com.br",
+ "atualizado": "2026-11-26T12:02-03:00",
+ "fonte": "Amazon, Mercado Livre, Zoom, lacadordeofertas.com.br, webcontinental.com.br",
  "produtos": [
   {
    "id": "13660715",
@@ -1191,6 +1191,206 @@
    ]
   },
   {
+   "id": "ml-5233249998",
+   "nome": "Mala De Viagem Avião Policarbonato 10kg",
+   "url": "https://produto.mercadolivre.com.br/MLB-5233249998-mala-de-viagem-avio-policarbonato-10kg-_JM",
+   "imagem": "https://http2.mlstatic.com/D_Q_NP_2X_804684-MLB91955878105_092025-V-mala-de-viagem-avio-policarbonato-10kg.webp",
+   "entrada": "https://produto.mercadolivre.com.br/MLB-5233249998-mala-de-viagem-avio-policarbonato-10kg-_JM",
+   "alvo": null,
+   "preco": 310.0,
+   "loja": "Mercado Livre",
+   "fonte": "Mercado Livre",
+   "n_lojas": 1,
+   "favorito": true,
+   "obs": "23% OFF (de R$ 403). Frete grátis",
+   "analise": {
+    "dias_historico": 0,
+    "mediana": null,
+    "minimo": null,
+    "maximo": null,
+    "minimo_data": null,
+    "dif_mediana": null,
+    "pico_recente": null,
+    "veredito": "curto",
+    "titulo": "Histórico curto",
+    "explicacao": "Ainda há poucos dias de histórico para julgar este preço."
+   },
+   "serie": [
+    [
+     "2026-11-26",
+     310.0
+    ]
+   ]
+  },
+  {
+   "id": "fav-59c063fff7",
+   "nome": "Regata Masculina Modeladora Slim Alta Compressão Cinta Homem Preto 3xl",
+   "url": "https://www.mercadolivre.com.br/regata-masculina-modeladora-slim-alta-compressao-cinta-homem/up/MLBU4220998477",
+   "imagem": "https://http2.mlstatic.com/D_Q_NP_2X_851084-MLB114187941369_072026-V.webp",
+   "entrada": "https://www.mercadolivre.com.br/regata-masculina-modeladora-slim-alta-compressao-cinta-homem/up/MLBU4220998477",
+   "alvo": null,
+   "preco": 39.9,
+   "loja": "Mercado Livre",
+   "fonte": "Mercado Livre",
+   "n_lojas": 1,
+   "favorito": true,
+   "obs": "33% OFF (de R$ 59,90). Frete grátis",
+   "analise": {
+    "dias_historico": 1,
+    "mediana": null,
+    "minimo": null,
+    "maximo": null,
+    "minimo_data": null,
+    "dif_mediana": null,
+    "pico_recente": null,
+    "veredito": "curto",
+    "titulo": "Histórico curto",
+    "explicacao": "Ainda há poucos dias de histórico para julgar este preço."
+   },
+   "serie": [
+    [
+     "2026-11-20",
+     39.9
+    ],
+    [
+     "2026-11-26",
+     39.9
+    ]
+   ]
+  },
+  {
+   "id": "fav-aa03f14e9d",
+   "nome": "Camisas Plus Size Térmica Segunda Pele Proteção Uv Premium Preto Liso G3 (50)",
+   "url": "https://www.mercadolivre.com.br/camisas-plus-size-termica-segunda-pele-protecao-uv-premium/up/MLBU3928471781",
+   "imagem": "https://http2.mlstatic.com/D_Q_NP_2X_621731-MLB105977865256_022026-V.webp",
+   "entrada": "https://www.mercadolivre.com.br/camisas-plus-size-termica-segunda-pele-protecao-uv-premium/up/MLBU3928471781",
+   "alvo": null,
+   "preco": 24.0,
+   "loja": "Mercado Livre",
+   "fonte": "Mercado Livre",
+   "n_lojas": 1,
+   "favorito": true,
+   "obs": "39% OFF (de R$ 39,90). Frete grátis",
+   "analise": {
+    "dias_historico": 1,
+    "mediana": null,
+    "minimo": null,
+    "maximo": null,
+    "minimo_data": null,
+    "dif_mediana": null,
+    "pico_recente": null,
+    "veredito": "curto",
+    "titulo": "Histórico curto",
+    "explicacao": "Ainda há poucos dias de histórico para julgar este preço."
+   },
+   "serie": [
+    [
+     "2026-11-20",
+     24.0
+    ],
+    [
+     "2026-11-26",
+     24.0
+    ]
+   ]
+  },
+  {
+   "id": "amz-B07LFGWRC7",
+   "nome": "Clear Shampoo Men Anticaspa Ice Cool Menthol 400Ml | Anticaspa mentolado refrescante",
+   "url": "https://www.amazon.com.br/dp/B07LFGWRC7",
+   "imagem": "https://m.media-amazon.com/images/I/41k6AMqjx8L._SS135_.jpg",
+   "entrada": "https://www.amazon.com.br/dp/B07LFGWRC7",
+   "alvo": null,
+   "preco": 21.09,
+   "loja": "Amazon",
+   "fonte": "Amazon",
+   "n_lojas": 1,
+   "favorito": true,
+   "obs": "34% off Oferta (de R$ 31,99)",
+   "analise": {
+    "dias_historico": 0,
+    "mediana": null,
+    "minimo": null,
+    "maximo": null,
+    "minimo_data": null,
+    "dif_mediana": null,
+    "pico_recente": null,
+    "veredito": "curto",
+    "titulo": "Histórico curto",
+    "explicacao": "Ainda há poucos dias de histórico para julgar este preço."
+   },
+   "serie": [
+    [
+     "2026-11-26",
+     21.09
+    ]
+   ]
+  },
+  {
+   "id": "amz-B0F4JSFBNW",
+   "nome": "Kit 4 Organizadores de Geladeira com Tampa e Divisórias – Transparente com Cesto Removível – Ideal para Frutas, Legumes e Alimentos – BPA Free",
+   "url": "https://www.amazon.com.br/dp/B0F4JSFBNW",
+   "imagem": "https://m.media-amazon.com/images/I/41AJpVHHqEL._SS135_.jpg",
+   "entrada": "https://www.amazon.com.br/dp/B0F4JSFBNW",
+   "alvo": null,
+   "preco": 149.99,
+   "loja": "Amazon",
+   "fonte": "Amazon",
+   "n_lojas": 1,
+   "favorito": true,
+   "obs": null,
+   "analise": {
+    "dias_historico": 0,
+    "mediana": null,
+    "minimo": null,
+    "maximo": null,
+    "minimo_data": null,
+    "dif_mediana": null,
+    "pico_recente": null,
+    "veredito": "curto",
+    "titulo": "Histórico curto",
+    "explicacao": "Ainda há poucos dias de histórico para julgar este preço."
+   },
+   "serie": [
+    [
+     "2026-11-26",
+     149.99
+    ]
+   ]
+  },
+  {
+   "id": "amz-B0H73CT1C9",
+   "nome": "Kit 3 Potes Herméticos para Geladeira com Escorredor Removível | Organizadores de Alimentos Transparentes | Tampa com Vedação Hermética | Livre de BPA | Empilháveis | 850ml, 1750ml e 3300ml",
+   "url": "https://www.amazon.com.br/dp/B0H73CT1C9",
+   "imagem": "https://m.media-amazon.com/images/I/41GKXibdkIL._SS135_.jpg",
+   "entrada": "https://www.amazon.com.br/dp/B0H73CT1C9",
+   "alvo": null,
+   "preco": 39.99,
+   "loja": "Amazon",
+   "fonte": "Amazon",
+   "n_lojas": 1,
+   "favorito": true,
+   "obs": "Entrega grátis para membros Prime",
+   "analise": {
+    "dias_historico": 0,
+    "mediana": null,
+    "minimo": null,
+    "maximo": null,
+    "minimo_data": null,
+    "dif_mediana": null,
+    "pico_recente": null,
+    "veredito": "curto",
+    "titulo": "Histórico curto",
+    "explicacao": "Ainda há poucos dias de histórico para julgar este preço."
+   },
+   "serie": [
+    [
+     "2026-11-26",
+     39.99
+    ]
+   ]
+  },
+  {
    "id": "amz-B0GV5XP2R3",
    "nome": "Kit 3 Essências Via Aroma Lavanda Francesa Bamboo e Vanilla 30ml | Para aromatização de salas, quartos, banheiros e escritórios.",
    "url": "https://www.amazon.com.br/dp/B0GV5XP2R3",
@@ -1202,7 +1402,7 @@
    "fonte": "Amazon",
    "n_lojas": 1,
    "favorito": true,
-   "obs": "Oferta Black Friday: 10% off (de R$ 49,90)",
+   "obs": "10% off Oferta Black Friday (de R$ 49,90)",
    "analise": {
     "dias_historico": 1,
     "mediana": null,
@@ -1219,6 +1419,10 @@
     [
      "2026-11-21",
      44.91
+    ],
+    [
+     "2026-11-26",
+     44.91
     ]
    ]
   }
@@ -1227,11 +1431,6 @@
   {
    "entrada": "https://www.magazineluiza.com.br/prato-raso-fiore-ceramica-azul-acasa-acasa/p/fb8jhjc7e2/ud/prra/?utm_source=zoom&utm_medium=cpa&partner_id=77341&utm_content=none_roa_amp_4p_cpa_none_tod_none&seller_id=angeloni2&utm_term=e89246f7d59b4352adc55ee78f40a60a&utm_campaign=e89246f7d59b4352adc55ee78f40a60a",
    "erro": "magazineluiza.com.br não deixou ler a página (bloqueia leitura automática ou o link está errado): falha ao baixar https://www.magazineluiza.com.br/prato-raso-fiore-ceramica-azul-acasa-acasa/p/fb8jhjc7e2/ud/prra/?utm_source=zoom&utm_medium=cpa&partner_id=77341&utm_content=none_roa_amp_4p_cpa_none_tod_none&seller_id=angeloni2&utm_term=e89246f7d59b4352adc55ee78f40a60a&utm_campaign=e89246f7d59b4352adc55ee78f40a60a: HTTP Error 403: Forbidden"
-  },
-  {
-   "entrada": "Favoritos Mercado Livre",
-   "erro": "lista de favoritos vazia na conta logada no Chrome (CENTER H...); possivelmente outra conta",
-   "favorito": true
   }
  ]
 }
