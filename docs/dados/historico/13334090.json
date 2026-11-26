@@ -92,6 +92,10 @@
   "2026-11-25": {
    "preco": 379.0,
    "loja": "Americanas"
+  },
+  "2026-11-26": {
+   "preco": 379.0,
+   "loja": "Americanas"
   }
  },
  "coletas": [
@@ -601,6 +605,12 @@
   },
   {
    "quando": "2026-11-25T22:06-03:00",
+   "preco": 379.0,
+   "loja": "Americanas",
+   "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-26T05:02-03:00",
    "preco": 379.0,
    "loja": "Americanas",
    "n_lojas": 1

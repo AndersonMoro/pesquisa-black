@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-25T22:06-03:00",
+ "atualizado": "2026-11-26T05:02-03:00",
  "fonte": "Amazon, Zoom, lacadordeofertas.com.br, webcontinental.com.br",
  "produtos": [
   {
@@ -15,7 +15,7 @@
    "n_lojas": 1,
    "aproximado": true,
    "analise": {
-    "dias_historico": 51,
+    "dias_historico": 52,
     "mediana": 909.14,
     "minimo": 852.33,
     "maximo": 1181.89,
@@ -234,6 +234,10 @@
     [
      "2026-11-25",
      1181.89
+    ],
+    [
+     "2026-11-26",
+     1181.89
     ]
    ]
   },
@@ -250,7 +254,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 51,
+    "dias_historico": 52,
     "mediana": 360.99,
     "minimo": 360.99,
     "maximo": 360.99,
@@ -469,6 +473,10 @@
     [
      "2026-11-25",
      360.99
+    ],
+    [
+     "2026-11-26",
+     360.99
     ]
    ]
   },
@@ -485,7 +493,7 @@
    "n_lojas": 1,
    "aproximado": true,
    "analise": {
-    "dias_historico": 22,
+    "dias_historico": 23,
     "mediana": 379.0,
     "minimo": 379.0,
     "maximo": 379.0,
@@ -588,6 +596,10 @@
     [
      "2026-11-25",
      379.0
+    ],
+    [
+     "2026-11-26",
+     379.0
     ]
    ]
   },
@@ -604,7 +616,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 40,
+    "dias_historico": 41,
     "mediana": 319.9,
     "minimo": 299.9,
     "maximo": 319.9,
@@ -779,6 +791,10 @@
     [
      "2026-11-25",
      319.9
+    ],
+    [
+     "2026-11-26",
+     319.9
     ]
    ]
   },
@@ -795,7 +811,7 @@
    "n_lojas": 2,
    "aproximado": false,
    "analise": {
-    "dias_historico": 46,
+    "dias_historico": 47,
     "mediana": 3157.0,
     "minimo": 1872.9,
     "maximo": 3157.0,
@@ -994,6 +1010,10 @@
     [
      "2026-11-25",
      1999.0
+    ],
+    [
+     "2026-11-26",
+     3157.0
     ]
    ]
   },
@@ -1010,7 +1030,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 7,
+    "dias_historico": 8,
     "mediana": 149.9,
     "minimo": 149.9,
     "maximo": 149.9,
@@ -1053,6 +1073,10 @@
     [
      "2026-11-25",
      149.9
+    ],
+    [
+     "2026-11-26",
+     149.9
     ]
    ]
   },
@@ -1069,7 +1093,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 7,
+    "dias_historico": 8,
     "mediana": 129.9,
     "minimo": 129.9,
     "maximo": 129.9,
@@ -1112,6 +1136,10 @@
     [
      "2026-11-25",
      129.9
+    ],
+    [
+     "2026-11-26",
+     129.9
     ]
    ]
   },
@@ -1128,7 +1156,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 3,
+    "dias_historico": 4,
     "mediana": null,
     "minimo": null,
     "maximo": null,
@@ -1154,6 +1182,10 @@
     ],
     [
      "2026-11-25",
+     48.93
+    ],
+    [
+     "2026-11-26",
      48.93
     ]
    ]
