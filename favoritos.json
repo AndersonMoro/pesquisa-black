@@ -1,16 +1,13 @@
 {
-  "quando": "2026-11-21T14:20:18-03:00",
+  "quando": "2026-11-26T12:02:21-03:00",
   "itens": [
-    {
-      "loja": "Amazon",
-      "nome": "Kit 3 Essências Via Aroma Lavanda Francesa Bamboo e Vanilla 30ml | Para aromatização de salas, quartos, banheiros e escritórios.",
-      "preco": 44.91,
-      "url": "https://www.amazon.com.br/dp/B0GV5XP2R3",
-      "imagem": "https://m.media-amazon.com/images/I/41CPCqAtitL._SS135_.jpg",
-      "obs": "Oferta Black Friday: 10% off (de R$ 49,90)"
-    }
+    {"loja": "Mercado Livre", "nome": "Mala De Viagem Avião Policarbonato 10kg", "preco": 310.0, "url": "https://produto.mercadolivre.com.br/MLB-5233249998-mala-de-viagem-avio-policarbonato-10kg-_JM", "imagem": "https://http2.mlstatic.com/D_Q_NP_2X_804684-MLB91955878105_092025-V-mala-de-viagem-avio-policarbonato-10kg.webp", "obs": "23% OFF (de R$ 403). Frete grátis"},
+    {"loja": "Mercado Livre", "nome": "Regata Masculina Modeladora Slim Alta Compressão Cinta Homem Preto 3xl", "preco": 39.9, "url": "https://www.mercadolivre.com.br/regata-masculina-modeladora-slim-alta-compressao-cinta-homem/up/MLBU4220998477", "imagem": "https://http2.mlstatic.com/D_Q_NP_2X_851084-MLB114187941369_072026-V.webp", "obs": "33% OFF (de R$ 59,90). Frete grátis"},
+    {"loja": "Mercado Livre", "nome": "Camisas Plus Size Térmica Segunda Pele Proteção Uv Premium Preto Liso G3 (50)", "preco": 24.0, "url": "https://www.mercadolivre.com.br/camisas-plus-size-termica-segunda-pele-protecao-uv-premium/up/MLBU3928471781", "imagem": "https://http2.mlstatic.com/D_Q_NP_2X_621731-MLB105977865256_022026-V.webp", "obs": "39% OFF (de R$ 39,90). Frete grátis"},
+    {"loja": "Amazon", "nome": "Clear Shampoo Men Anticaspa Ice Cool Menthol 400Ml | Anticaspa mentolado refrescante", "preco": 21.09, "url": "https://www.amazon.com.br/dp/B07LFGWRC7", "imagem": "https://m.media-amazon.com/images/I/41k6AMqjx8L._SS135_.jpg", "obs": "34% off Oferta (de R$ 31,99)"},
+    {"loja": "Amazon", "nome": "Kit 4 Organizadores de Geladeira com Tampa e Divisórias – Transparente com Cesto Removível – Ideal para Frutas, Legumes e Alimentos – BPA Free", "preco": 149.99, "url": "https://www.amazon.com.br/dp/B0F4JSFBNW", "imagem": "https://m.media-amazon.com/images/I/41AJpVHHqEL._SS135_.jpg"},
+    {"loja": "Amazon", "nome": "Kit 3 Potes Herméticos para Geladeira com Escorredor Removível | Organizadores de Alimentos Transparentes | Tampa com Vedação Hermética | Livre de BPA | Empilháveis | 850ml, 1750ml e 3300ml", "preco": 39.99, "url": "https://www.amazon.com.br/dp/B0H73CT1C9", "imagem": "https://m.media-amazon.com/images/I/41GKXibdkIL._SS135_.jpg", "obs": "Entrega grátis para membros Prime"},
+    {"loja": "Amazon", "nome": "Kit 3 Essências Via Aroma Lavanda Francesa Bamboo e Vanilla 30ml | Para aromatização de salas, quartos, banheiros e escritórios.", "preco": 44.91, "url": "https://www.amazon.com.br/dp/B0GV5XP2R3", "imagem": "https://m.media-amazon.com/images/I/41CPCqAtitL._SS135_.jpg", "obs": "10% off Oferta Black Friday (de R$ 49,90)"}
   ],
-  "falhas": [
-    {"loja": "Mercado Livre", "erro": "lista de favoritos vazia na conta logada no Chrome (CENTER H...); possivelmente outra conta"}
-  ]
+  "falhas": []
 }
