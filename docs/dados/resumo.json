@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-26T15:21-03:00",
+ "atualizado": "2026-11-26T18:06-03:00",
  "fonte": "Amazon, Mercado Livre, Zoom, lacadordeofertas.com.br, webcontinental.com.br",
  "produtos": [
   {
@@ -805,10 +805,10 @@
    "imagem": "https://image.zst.com.br/C8C20AFF764A11115D348F124639B800_810_590.jpg",
    "entrada": "https://www.zoom.com.br/smartwatch/smartwatch-samsung-galaxy-watch-ultra-4g-47-0-mm?_lc=88&experiencevariant=cro-12-2&searchterm=samsung%20watch%208",
    "alvo": null,
-   "preco": 4197.2,
-   "loja": "Amazon",
+   "preco": 4239.99,
+   "loja": "Magazine Luiza",
    "fonte": "Zoom",
-   "n_lojas": 2,
+   "n_lojas": 1,
    "aproximado": false,
    "analise": {
     "dias_historico": 47,
@@ -816,11 +816,11 @@
     "minimo": 1872.9,
     "maximo": 3157.0,
     "minimo_data": "2026-10-21",
-    "dif_mediana": 32.9,
+    "dif_mediana": 34.3,
     "pico_recente": 3157.0,
     "veredito": "caro",
     "titulo": "Acima do normal",
-    "explicacao": "33% acima do preço normal (R$ 3.157,00). Se aparecer 'desconto' em cima disso, desconfie."
+    "explicacao": "34% acima do preço normal (R$ 3.157,00). Se aparecer 'desconto' em cima disso, desconfie."
    },
    "serie": [
     [

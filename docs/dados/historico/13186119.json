@@ -560,6 +560,12 @@
    "preco": 4197.2,
    "loja": "Amazon",
    "n_lojas": 2
+  },
+  {
+   "quando": "2026-11-26T18:06-03:00",
+   "preco": 4239.99,
+   "loja": "Magazine Luiza",
+   "n_lojas": 1
   }
  ],
  "lojas": {
