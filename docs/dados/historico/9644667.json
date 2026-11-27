@@ -170,7 +170,7 @@
    "loja": "Amazon"
   },
   "2026-11-27": {
-   "preco": 319.9,
+   "preco": 303.9,
    "loja": "Amazon"
   }
  },
@@ -699,6 +699,12 @@
   },
   {
    "quando": "2026-11-27T08:07-03:00",
+   "preco": 319.9,
+   "loja": "Amazon",
+   "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-27T16:40-03:00",
    "preco": 319.9,
    "loja": "Amazon",
    "n_lojas": 1
