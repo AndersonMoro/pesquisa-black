@@ -800,6 +800,12 @@
    "preco": 1181.89,
    "loja": "Webcontinental",
    "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-27T18:06-03:00",
+   "preco": 1181.89,
+   "loja": "Webcontinental",
+   "n_lojas": 1
   }
  ],
  "lojas": {
