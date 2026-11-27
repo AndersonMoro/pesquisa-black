@@ -168,6 +168,10 @@
   "2026-11-26": {
    "preco": 319.9,
    "loja": "Amazon"
+  },
+  "2026-11-27": {
+   "preco": 319.9,
+   "loja": "Amazon"
   }
  },
  "coletas": [
@@ -683,6 +687,12 @@
   },
   {
    "quando": "2026-11-26T22:50-03:00",
+   "preco": 319.9,
+   "loja": "Amazon",
+   "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-27T07:45-03:00",
    "preco": 319.9,
    "loja": "Amazon",
    "n_lojas": 1
