@@ -736,6 +736,12 @@
    "preco": 319.9,
    "loja": "Amazon",
    "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-28T08:05-03:00",
+   "preco": 319.9,
+   "loja": "Amazon",
+   "n_lojas": 1
   }
  ],
  "lojas": {
