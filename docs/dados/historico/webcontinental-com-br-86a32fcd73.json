@@ -218,6 +218,12 @@
    "preco": 48.93,
    "loja": "webcontinental.com.br",
    "n_lojas": 1
+  },
+  {
+   "quando": "2026-11-27T23:11-03:00",
+   "preco": 48.93,
+   "loja": "webcontinental.com.br",
+   "n_lojas": 1
   }
  ],
  "lojas": {},
