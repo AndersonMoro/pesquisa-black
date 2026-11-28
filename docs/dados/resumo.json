@@ -1,5 +1,5 @@
 {
- "atualizado": "2026-11-27T23:11-03:00",
+ "atualizado": "2026-11-28T07:40-03:00",
  "fonte": "Amazon, Mercado Livre, Zoom, lacadordeofertas.com.br, webcontinental.com.br",
  "produtos": [
   {
@@ -15,7 +15,7 @@
    "n_lojas": 1,
    "aproximado": true,
    "analise": {
-    "dias_historico": 53,
+    "dias_historico": 54,
     "mediana": 909.14,
     "minimo": 852.33,
     "maximo": 1181.89,
@@ -242,6 +242,10 @@
     [
      "2026-11-27",
      1181.89
+    ],
+    [
+     "2026-11-28",
+     1181.89
     ]
    ]
   },
@@ -258,7 +262,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 53,
+    "dias_historico": 54,
     "mediana": 360.99,
     "minimo": 360.99,
     "maximo": 360.99,
@@ -485,6 +489,10 @@
     [
      "2026-11-27",
      360.99
+    ],
+    [
+     "2026-11-28",
+     360.99
     ]
    ]
   },
@@ -501,7 +509,7 @@
    "n_lojas": 1,
    "aproximado": true,
    "analise": {
-    "dias_historico": 24,
+    "dias_historico": 25,
     "mediana": 379.0,
     "minimo": 379.0,
     "maximo": 379.0,
@@ -612,6 +620,10 @@
     [
      "2026-11-27",
      379.0
+    ],
+    [
+     "2026-11-28",
+     379.0
     ]
    ]
   },
@@ -628,7 +640,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 42,
+    "dias_historico": 43,
     "mediana": 319.9,
     "minimo": 299.9,
     "maximo": 319.9,
@@ -811,6 +823,10 @@
     [
      "2026-11-27",
      303.9
+    ],
+    [
+     "2026-11-28",
+     319.9
     ]
    ]
   },
@@ -827,13 +843,13 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 48,
+    "dias_historico": 49,
     "mediana": 3157.0,
     "minimo": 1872.9,
-    "maximo": 3157.0,
+    "maximo": 4239.99,
     "minimo_data": "2026-10-21",
     "dif_mediana": 34.3,
-    "pico_recente": 3157.0,
+    "pico_recente": 4239.99,
     "veredito": "caro",
     "titulo": "Acima do normal",
     "explicacao": "34% acima do preço normal (R$ 3.157,00). Se aparecer 'desconto' em cima disso, desconfie."
@@ -1034,6 +1050,10 @@
     [
      "2026-11-27",
      4239.99
+    ],
+    [
+     "2026-11-28",
+     4239.99
     ]
    ]
   },
@@ -1050,7 +1070,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 9,
+    "dias_historico": 10,
     "mediana": 149.9,
     "minimo": 149.9,
     "maximo": 149.9,
@@ -1101,6 +1121,10 @@
     [
      "2026-11-27",
      149.9
+    ],
+    [
+     "2026-11-28",
+     149.9
     ]
    ]
   },
@@ -1117,7 +1141,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 9,
+    "dias_historico": 10,
     "mediana": 129.9,
     "minimo": 129.9,
     "maximo": 129.9,
@@ -1168,6 +1192,10 @@
     [
      "2026-11-27",
      129.9
+    ],
+    [
+     "2026-11-28",
+     129.9
     ]
    ]
   },
@@ -1184,7 +1212,7 @@
    "n_lojas": 1,
    "aproximado": false,
    "analise": {
-    "dias_historico": 5,
+    "dias_historico": 6,
     "mediana": null,
     "minimo": null,
     "maximo": null,
@@ -1218,6 +1246,10 @@
     ],
     [
      "2026-11-27",
+     48.93
+    ],
+    [
+     "2026-11-28",
      48.93
     ]
    ]
